@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css"> <!-- linka o css no html -->
+  <!-- Fonte que usa no VS Code -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tema highlight.js estiloso e escuro -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+  <!-- Highlight.js core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Ativa o highlight automático -->
+  <script>hljs.highlightAll();</script>
+
+  <!-- para fazer a animação dos elementos subirem na tela -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- coloca o emoji de notebook no logo do site -->
+  <link rel="icon" href="https://emoji.beeimg.com/💻/64">
+  <link rel="icon" href="https://www.faviconkit.com/emoji/1f4bb/64">
+
+  <title>Módulo 2</title>
+</head>
+
+<body>
+
+  <div id="progresso"></div> <!-- Barrinha laranja que aparece conforme você rola a página -->
+
+  <header class="header">
+    <section>
+      <a href="index.html">
+        <img src="./img/Os Programuxos.png" alt="logo-os-programuxos"> <!-- Logo do projeto -->
+      </a>
+
+      <nav> <!-- Menu de navegação -->
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="módulos.html">Módulos</a>
+            <ul class="submenu">
+              <li><a href="modulo1.html">> Módulo 1</a></li>
+              <li><a href="modulo2.html">> Módulo 2</a></li>
+              <li><a href="modulo3.html">> Módulo 3</a></li>
+            </ul>
+          </li>
+          <li><a href="sobre-o-projeto.html">Sobre o Projeto</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <main class="modulos-background" style="background-image: url('./img/fundo-modulos.png');">
+    <div class="mascara-modulos"></div>
+
+    <section class="conteudo-modulos">
+      <div class="caixa-modulo" data-aos="fade-up">
+        <div class="modulo-texto" data-aos="fade-up">
+          <div class="titulo-com-linha">
+            <h3>Módulo 2 - Fundamentos da Linguagem C</h3>
+            <div class="linha-laranja"></div>
+          </div>
+          <p>Bem-vindo ao <strong>Módulo 2</strong>. Nós, os programuxos, estamos felizes por estar engajado em conhecer
+            mais! Aqui, você aprenderá os conceitos fundamentais para começar a programar, desde a estrutura básica de
+            um programa até estruturas de controle como condicionais e laços de repetição.</p>
+
+          <ul class="modulo-topics">
+            <li>Estrutura de um programa C</li>
+            <li>Variáveis e tipos de dados (int, float, double, long, char)</li>
+            <li>Estrada e saída de dados (scanf, printf)</li>
+            <li>Operadores aritméticos, lógicos e relacionais</li>
+            <li>Condicionais (if, else, switch-case)</li>
+            <li>Laços para repetição (for, while, do-while)</li>
+          </ul>
+
+
+          <!-- para colocar os tópicos negrito em laranja -->
+          <style>
+            .negrito-colorido {
+              font-weight: bold;
+              /* aplica negrito */
+              color: #ff6600;
+              /* define a cor como laranja */
+            }
+          </style>
+
+
+          <h2 id="estrutura-programa">Estrutura de um Programa C</h2>
+          <p>Todo programa em C segue uma estrutura fixa que o compilador reconhece para transformar o código em algo
+            executável. Essa estrutura começa com a inclusão de bibliotecas por meio da diretiva <span
+              class="negrito-colorido">#include</span>, que traz funcionalidades prontas, como leitura de dados,
+            impressão na tela ou cálculos matemáticos.</p>
+
+          <div class="caixa-modulo2" data-aos="fade-up">
+            <div class="modulo-texto2">
+              <h3>Bibliotecas (#include)</h3>
+              <p>As bibliotecas em C são arquivos que contêm funções e definições prontas para serem utilizadas no
+                programa. Elas são incluídas no início do código com a diretiva <span
+                  class="destaque-laranja">#include</span>, permitindo o uso de recursos já existentes, como entrada e
+                saída de dados, operações matemáticas, manipulação de memória, entre outros.</p>
+              <p>Por exemplo, a biblioteca <span class="negrito-colorido">&lt;stdio.h&gt</span> fornece as funções <span
+                  class="negrito-colorido">printf</span> e <span class="negrito-colorido">scanf</span> que são usadas
+                para
+                exibir e ler dados no terminal.</p>
+            </div>
+          </div>
+
+          <div class="compilar-box">
+            <div class="code-wrapper3" data-aos="fade-up" data-aos-delay="200">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">
+#include &lt;stdio.h&gt; // Biblioteca para entrada e saída de dados
+
+int main() {
+  int idade; // Declara uma variável do tipo inteiro
+
+  // Exibe uma mensagem para o usuário
+  printf("Digite a sua idade: ");
+
+  // Lê um valor digitado pelo usuário e armazena na variável idade
+  scanf("%d", &idade);
+
+  // Estrutura condicional para verificar a idade
+  if (idade >= 18) {
+      printf("Você é maior de idade.\n");
+  } else {
+      printf("Você é menor de idade.\n");
+  }
+
+  return 0; // Indica que o programa terminou corretamente
+}
+</code></pre>
+            </div>
+          </div>
+
+          <div class="conteudo-explicacao2" data-aos="fade-up" data-aos-delay="200">
+            <h4>Explicação do Código</h4>
+            <ul class="modulo-topics3">
+              <li><span class="negrito-colorido">#include &lt;stdio.h&gt;</span> Inclui a biblioteca para usar printf
+                e scanf</li>
+              <li><span class="negrito-colorido">int main()</span> Define a função principal onde a execução começa
+              </li>
+              <li><span class="negrito-colorido">int idade</span> Declara uma variável inteira chamada 'idade'</li>
+              <li><span class="negrito-colorido">printf</span> Exibe mensagens na tela</li>
+              <li><span class="negrito-colorido">scanf</span> Lê dados digitados pelo usuário</li>
+              <li><span class="negrito-colorido">if-else</span> Toma decisões baseadas em condições</li>
+              <li><span class="negrito-colorido">return 0</span> Indica que o programa terminou com sucesso</li>
+            </ul>
+          </div>
+
+          <h3>Tipos de Dados Básicos em C</h3>
+          <div class="conteudo-explicacao" data-aos="fade-up" data-aos-delay="200">
+            <table class="tabela-dados">
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Uso</th>
+                  <th>Tamanho</th>
+                  <th>Exemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="destaque-laranja">char</span></td>
+                  <td>Caractere</td>
+                  <td>1 byte</td>
+                  <td>'A', 'z', '0'</td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">int</span></td>
+                  <td>Inteiros</td>
+                  <td>4 bytes</td>
+                  <td>-100, 0, 2024</td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">short</span></td>
+                  <td>Inteiro menor</td>
+                  <td>2 bytes</td>
+                  <td>-32768, 250</td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">long</span></td>
+                  <td>Inteiro maior</td>
+                  <td>4 ou 8 bytes</td>
+                  <td>100000, -99999999</td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">float</span></td>
+                  <td>Real com menos precisão</td>
+                  <td>4 bytes</td>
+                  <td>3.14f, -0.5f</td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">double</span></td>
+                  <td>Real com mais precisão</td>
+                  <td>8 bytes</td>
+                  <td>3.14159265, -2.5</td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">long double</span></td>
+                  <td>Real com precisão estendida</td>
+                  <td>12-16+ bytes</td>
+                  <td>3.141592653589793L</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Exemplo de Declaração de Variáveis</h3>
+          <div class="conteudo-explicacao2" data-aos="fade-up" data-aos-delay="200">
+            <div class="code-wrapper3" data-aos="fade-up">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+int idade = 25;
+float salario = 2500.50;
+char genero = 'M';
+double pi = 3.1415926535;
+
+printf("Idade: %d\n", idade);
+printf("Salário: %.2f\n", salario);
+printf("Gênero: %c\n", genero);
+printf("Valor de PI: %.5lf\n", pi);
+
+return 0;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="conteudo-explicacao2" data-aos="fade-up" data-aos-delay="200">
+            <h4>Especificadores de Formato</h4>
+            <ul class="modulo-topics3">
+              <li><span class="negrito-colorido">%d</span> usado para <span class="destaque-laranja">int</span></li>
+              <li><span class="negrito-colorido">%f</span> usado para <span class="destaque-laranja">float</span></li>
+              <li><span class="negrito-colorido">%lf</span> usado para <span class="destaque-laranja">double</span>
+              </li>
+              <li><span class="negrito-colorido">%c</span> usado para <span class="destaque-laranja">char</span></li>
+            </ul>
+          </div>
+
+          <h2 id="entrada-saida">Entrada e Saída de Dados (scanf e printf)</h2>
+          <p>A linguagem C utiliza as funções <span class="destaque-laranja">scanf</span> e <span
+              class="destaque-laranja">printf</span>, da biblioteca <span
+              class="destaque-laranja">&lt;stdio.h&gt</span>, para
+            entrada e saída de dados, respectivamente.</p>
+
+          <h3>Saída de Dados (printf)</h3>
+          <p>Exibe mensagens formatadas na tela, permitindo mostrar textos, números e variáveis no console.</p>
+          <div class="compilar-box">
+            <div class="code-wrapper2" data-aos="fade-up" data-aos-delay="200">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">printf("Mensagem %d, %f, %c", variavel1, variavel2, variavel3);</code></pre>
+            </div>
+          </div>
+
+          <h3>Entrada de Dados (scanf)</h3>
+          <p>Lê dados digitados pelo usuário, armazenando-os em variáveis com especificadores como <span class="negrito-colorido">%d</span> (inteiros) e <span class="negrito-colorido">%f</span> (decimais).</p>
+          <div class="compilar-box">
+            <div class="code-wrapper2" data-aos="fade-up">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+int idade;
+printf("Digite sua idade: ");
+scanf("%d", &idade);  // Lê um número inteiro
+printf("Você tem %d anos.\n", idade);
+return 0;
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="conteudo-explicacao2" data-aos="fade-up">
+            <h4>Atenção</h4>
+            <ul class="modulo-topics3">
+              <li>Sempre use <span class="negrito-colorido">&</span> antes do nome da variável em <span
+                  class="destaque-laranja">scanf</span> (exceto para strings)</li>
+            </ul>
+          </div>
+
+          <h3>Operadores Aritméticos</h3>
+          <p>Os operadores aritméticos em C <span class="negrito-colorido">(+, -, *, /, %)</span> realizam operações
+            matemáticas essenciais como soma, subtração, multiplicação, divisão e cálculo do resto.
+            Eles são a base para qualquer cálculo dentro de um programa, sendo amplamente usados em expressões e
+            algoritmos.</p>
+          <div class="conteudo-explicacao" data-aos="fade-up">
+            <table class="tabela-dados">
+              <thead>
+                <tr>
+                  <th>Operador</th>
+                  <th>Descrição</th>
+                  <th>Exemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="destaque-laranja">+</span></td>
+                  <td>Soma</td>
+                  <td><code>a + b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">-</span></td>
+                  <td>Subtração</td>
+                  <td><code>a - b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">*</span></td>
+                  <td>Multiplicação</td>
+                  <td><code>a * b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">/</span></td>
+                  <td>Divisão</td>
+                  <td><code>a / b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">%</span></td>
+                  <td>Resto da divisão</td>
+                  <td><code>a % b</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Operadores Relacionais -->
+          <div class="conteudo-explicacao" data-aos="fade-up">
+            <h3>Operadores Relacionais (Comparação)</h3>
+            <table class="tabela-dados">
+              <thead>
+                <tr>
+                  <th>Operador</th>
+                  <th>Descrição</th>
+                  <th>Exemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="destaque-laranja">==</span></td>
+                  <td>Igual</td>
+                  <td><code>a == b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">!=</span></td>
+                  <td>Diferente</td>
+                  <td><code>a != b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">&gt;</span></td>
+                  <td>Maior que</td>
+                  <td><code>a &gt; b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">&lt;</span></td>
+                  <td>Menor que</td>
+                  <td><code>a &lt; b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">&gt;=</span></td>
+                  <td>Maior ou igual</td>
+                  <td><code>a &gt;= b</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">&lt;=</span></td>
+                  <td>Menor ou igual</td>
+                  <td><code>a &lt;= b</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Operadores Lógicos -->
+          <div class="conteudo-explicacao" data-aos="fade-up">
+            <h3>Operadores Lógicos</h3>
+            <table class="tabela-dados">
+              <thead>
+                <tr>
+                  <th>Operador</th>
+                  <th>Descrição</th>
+                  <th>Exemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="destaque-laranja">&</span></td>
+                  <td>E (AND)</td>
+                  <td><code>(a &gt; 0) (b &lt; 10)</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">||</span></td>
+                  <td>OU (OR)</td>
+                  <td><code>(a == 0) || (b == 0)</code></td>
+                </tr>
+                <tr>
+                  <td><span class="destaque-laranja">!</span></td>
+                  <td>NÃO (NOT)</td>
+                  <td><code>!(a == b)</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="condicionais">Condicionais (if, else, switch - case)</h2>
+          <p>As estruturas condicionais em C permitem que o programa tome decisões com base em determinadas condições.
+          </p>
+
+          <h3>if-else (Se-Senão)</h3>
+          <p>Permite controlar o fluxo do programa, executando blocos de código diferentes conforme uma condição é verdadeira ou falsa.</p>
+          <div class="conteudo-explicacao2" data-aos="fade-up">
+            <div class="code-wrapper3" data-aos="fade-up" data-aos-delay="200">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+int idade;
+printf("Digite sua idade: ");
+scanf("%d", &idade);
+
+if (idade >= 18) {
+    printf("Você é maior de idade.\n");
+} else {
+    printf("Você é menor de idade.\n");
+}
+
+return 0;
+}</code></pre>
+            </div>
+          </div>
+
+          <h3>switch-case (Escolha-Caso)</h3>
+          <p>Compara uma variável com múltiplos valores possíveis, executando blocos de código específicos para cada caso correspondente.</p>
+          <div class="conteudo-explicacao2" data-aos="fade-up">
+            <div class="code-wrapper3" data-aos="fade-up" data-aos-delay="200">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+char opcao;
+printf("Escolha (A/B/C): ");
+scanf(" %c", &opcao);
+
+switch (opcao) {
+    case 'A':
+        printf("Opção A selecionada.\n");
+        break;
+    case 'B':
+        printf("Opção B selecionada.\n");
+        break;
+    case 'C':
+        printf("Opção C selecionada.\n");
+        break;
+    default:
+        printf("Opção inválida.\n");
+}
+
+return 0;
+}</code></pre>
+            </div>
+          </div>
+
+
+          <h2 id="lacos-repeticao">Laços de Repetição (for, while, do-while)</h2>
+          <p>Os laços de repetição em C são utilizados para executar um bloco de código várias vezes, enquanto uma
+            determinada condição for verdadeira.</p>
+
+          <h3>for (Para)</h3>
+          <p>Cria loops controlados que repetem um bloco de código um número específico de vezes, usando inicialização, condição e incremento.</p>
+          <div class="conteudo-explicacao2" data-aos="fade-up">
+            <div class="code-wrapper3" data-aos="fade-up" data-aos-delay="200">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+for (int i = 1; i <= 5; i++) {
+    printf("Número: %d\n", i);
+}
+return 0;
+}</code></pre>
+            </div>
+          </div>
+
+          <h3>while (Enquanto)</h3>
+          <p>Repete um bloco de código enquanto uma condição for verdadeira, sendo ideal quando não se sabe previamente quantas iterações serão necessárias.</p>
+          <div class="conteudo-explicacao2" data-aos="fade-up">
+            <div class="code-wrapper3" data-aos="fade-up" data-aos-delay="200">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+int contador = 1;
+while (contador <= 5) {
+    printf("Número: %d\n", contador);
+    contador++;
+}
+return 0;
+}</code></pre>
+            </div>
+          </div>
+
+          <h3>do-while (Faça-Enquanto)</h3>
+          <p>Executa um bloco de código pelo menos uma vez, repetindo-o enquanto a condição for verdadeira - a verificação ocorre após cada iteração.</p>
+          <div class="conteudo-explicacao2" data-aos="fade-up">
+            <div class="code-wrapper3" data-aos="fade-up" data-aos-delay="200">
+              <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+              <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+int contador = 1;
+do {
+    printf("Número: %d\n", contador);
+    contador++;
+} while (contador <= 5);
+return 0;
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 id="conclusao">Conclusão</h2>
+          <div class="compilar-container2">
+            <div class="compilar-row2">
+              <div class="compilar-box2" data-aos="fade-up" data-aos-delay="50">
+                <div class="compilar-content2">
+                  <h1>O que foi aprendido no Módulo 2</h1>
+                  <ul class="modulo-topics4">
+                    <li><span class="negrito-colorido">Estrutura Básica -</span> A estrutura básica de um programa em C</li>
+                    <li><span class="negrito-colorido">Declaração -</span> Como declarar variáveis e seus tipos</li>
+                    <li><span class="negrito-colorido">Como ler e imprimir dados -</span><strong>scanf</strong> e <strong>printf</strong></li>
+                    <li><span class="negrito-colorido">Operadores - </span> Aritméticos, relacionais e lógicos</li>
+                    <li><span class="negrito-colorido">Estruturas condicionais -</span> <strong>if-else, switch-case</strong></li>
+                    <li><span class="negrito-colorido">Laços de repetição -</span> <strong>for, while, do-while</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>       
+        </div>
+      </div>
+    </section>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <div class="botoes-navegacao">
+      <a href="modulo1.html" class="btn-navegacao btn-voltar">
+        Módulo Anterior
+      </a>
+      <a href="modulo3.html" class="btn-navegacao btn-proximo">
+        Próximo Módulo
+      </a>
+    </div>
+  </main>
+
+  <button id="btn-topo" class="btn-topo" title="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Mostrar/ocultar botão quando rolar a página
+    window.addEventListener('scroll', function () {
+      var btnTopo = document.getElementById('btn-topo');
+      if (window.pageYOffset > 300) {
+        btnTopo.classList.add('visible');
+      } else {
+        btnTopo.classList.remove('visible');
+      }
+    });
+
+    // Rolagem suave ao clicar
+    document.getElementById('btn-topo').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+  <script src="scripts.js"></script> <!-- linka o JavaScript com o HTML -->
+
+  <script>
+    function copiarCodigo(botao) {
+      const codigo = botao.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codigo).then(() => {
+        const textoOriginal = botao.innerText;
+        botao.innerText = 'Copiado!';
+        setTimeout(() => {
+          botao.innerText = textoOriginal;
+        }, 2000);
+      });
+    }
+  </script>
+
+  <!-- para o menu de navegação funcionar em dispositivos móveis -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+
+      // função para fechar todos os submenus
+      function closeAllSubmenus() {
+        document.querySelectorAll('.submenu').forEach(menu => {
+          menu.classList.remove('active');
+        });
+        document.querySelectorAll('.dropdown > a').forEach(btn => {
+          btn.classList.remove('active');
+        });
+      }
+
+      // configura o clique nos dropdowns
+      dropdownToggles.forEach(dropdown => {
+        dropdown.addEventListener('click', function (e) {
+          // verifica se é mobile
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            const isOpen = submenu.classList.contains('active');
+
+            closeAllSubmenus();
+
+            if (!isOpen) {
+              this.classList.add('active');
+              submenu.classList.add('active');
+            }
+          }
+        });
+      });
+
+      // fecha ao clicar fora do menu
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('nav')) {
+          closeAllSubmenus();
+        }
+      });
+
+      // impede que o evento propague para o documento quando clicar no menu
+      document.querySelector('nav').addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 - Os Programuxos - Engenharia de Computação</p>
+      <div class="social">
+        <a href="https://www.instagram.com/programuxos/">Instagram</a> |
+        <a href="https://github.com/osProgramuxos">GitHub</a> |
+        <a href="mailto:osprogramuxos@gmail.com">E-mail</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

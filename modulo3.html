@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css"> <!-- linka o css no html -->
+  <!-- Fonte que usa no VS Code -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tema highlight.js estiloso e escuro -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+  <!-- Highlight.js core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Ativa o highlight automático -->
+  <script>hljs.highlightAll();</script>
+
+  <!-- para fazer a animação dos elementos subirem na tela -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- coloca o emoji de notebook no logo do site -->
+  <link rel="icon" href="https://emoji.beeimg.com/💻/64">
+  <link rel="icon" href="https://www.faviconkit.com/emoji/1f4bb/64">
+
+  <title>Módulo 3</title>
+</head>
+
+<body>
+
+  <div id="progresso"></div> <!-- Barrinha laranja que aparece conforme você rola a página -->
+
+  <header class="header">
+    <section>
+      <a href="index.html">
+        <img src="./img/Os Programuxos.png" alt="logo-os-programuxos"> <!-- Logo do projeto -->
+      </a>
+
+      <nav> <!-- Menu de navegação -->
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="módulos.html">Módulos</a>
+            <ul class="submenu">
+              <li><a href="modulo1.html">> Módulo 1</a></li>
+              <li><a href="modulo2.html">> Módulo 2</a></li>
+              <li><a href="modulo3.html">> Módulo 3</a></li>
+            </ul>
+          </li>
+          <li><a href="sobre-o-projeto.html">Sobre o Projeto</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <main class="modulos-background" style="background-image: url('./img/fundo-modulos.png'); ">
+    <div class="mascara-modulos"></div>
+
+    <section class="conteudo-modulos">
+      <div class="caixa-modulo" data-aos="fade-up">
+        <div class="modulo-texto" data-aos="fade-up">
+          <div class="titulo-com-linha">
+            <h3>Módulo 3 - Praticando a Lógica</h3>
+            <div class="linha-laranja"></div>
+          </div>
+          <p>Bem vindo ao <strong>Módulo 3.</strong> Consolide seus conhecimentos de programação com exercícios práticos
+            que desenvolvem seu raciocínio lógico.
+            Este módulo oferece uma abordagem hands-on para você dominar estruturas fundamentais como condicionais,
+            laços de repetição e vetores, através de problemas reais e desafios progressivos.
+          </p>
+          <ul class="modulo-topics-modulo3">
+            <li>Bibliotecas essenciais</li>
+            <li>Exercícios com variáveis (soma, média, área de figuras)</li>
+            <li>Condicionais if/else (par/ímpar, maior número)</li>
+            <li>Laços de repetição (tabuada, contagem, somas)</li>
+            <li>Introdução a vetores (arrays)</li>
+          </ul>
+        </div>
+
+        <!-- para colocar os tópicos negrito em laranja -->
+        <style>
+          .negrito-colorido {
+            font-weight: bold;
+            /* aplica negrito */
+            color: #ff6600;
+            /* define a cor como laranja */
+          }
+        </style>
+
+        <!-- exercícios 1 e 2 -->
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <h3>Exercícios</h3>
+            <div class="modulo-texto">
+              <p>
+                Pratique esses exercícios no Dev C++ (ensinamos como instalar no módulo 1) ou no compilador online que
+                também recomendamos no Módulo 1.
+                Eles vão ajudar você a desenvolver sua habilidade de resolver problemas reais com código,
+                começando com operações simples até chegar em estruturas mais complexas.
+              </p>
+            </div>
+            <div class="conteudo-exercicios">
+              <h4>Estrutura Sequencial</h4>
+              <p><span class="negrito-colorido">1)</span> Crie um programa que some dois números.</p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta1')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta1" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main () {
+  int x;
+  int y;
+  int soma;
+
+  printf ("Digite o primeiro numero: ");
+  scanf ("%d", &x);
+
+  printf ("Digite o segundo numero: ");
+  scanf ("%d", &y);
+
+  soma = x + y;
+
+  printf ("A soma dos numeros eh: %d", soma);
+
+  return 0;
+}
+        </code></pre>
+              </div>
+              <p><span class="negrito-colorido">2)</span> Crie um programa que leia duas notas de um aluno e apresente a
+                média.</p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta2')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta2" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main () {
+  int x;
+  int y;
+  int soma;
+  float media;
+
+  printf ("Digite o primeiro numero: ");
+  scanf ("%d", &x);
+
+  printf ("Digite o segundo numero: ");
+  scanf ("%d", &y);
+
+  soma = x + y;
+  media = soma/2;
+
+  printf ("A media dos numeros eh: %.2f", media);
+
+  return 0;
+}
+        </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- exercícios 3 e 4 -->
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <div class="conteudo-exercicios">
+              <h4>Estrutura Condicional</h4>
+              <p><span class="negrito-colorido">3)</span> Construa um programa que leia um número, verifique se o
+                mesmo é par ou impar.</p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta3')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta3" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main () {
+  int numero;
+
+  printf ("Digite um numero: ");
+  scanf ("%d", &numero);
+
+  if (numero %2 == 0) {
+    printf ("Par");
+  }
+  else {
+    printf ("Impar");
+  }
+
+  return 0;
+}
+            </code></pre>
+              </div>
+              <p><span class="negrito-colorido">4)</span> Construa um algoritmo que leia dois números, calcule e
+                escreva a diferença do maior pelo menor.</p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta4')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta4" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main () {
+  int x;
+  int y;
+  int diferenca;
+
+  printf("Digite um numero: ");
+  scanf ("%d", &x);
+
+  printf("Digite um numero: ");
+  scanf ("%d", &y);
+
+  if (x > y ) {
+    diferenca = x - y ;
+  }
+  else {
+    diferenca = y - x;
+  }
+
+  printf ("A diferenca dos numeros: %d", diferenca);
+
+  return 0;
+}
+            </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- exercícios 5, 6, 7, 8, 9, 10, 11, 12 -->
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <div class="conteudo-exercicios">
+              <h4>Estrutura de Repetição</h4>
+              <p><span class="negrito-colorido">5)</span> Escrever um algoritmo que leia um número não determinado de
+                valores e calcule a média aritmética dos valores lidos, a quantidade de valores positivos, a quantidade
+                de valores
+                negativos. Mostre os resultados. O número que encerrará a leitura será zero.
+                <span class="negrito-colorido"> Dica:</span> Use while.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta5')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta5" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+# include &lt;stdio.h&gt;
+
+int main () {
+    int numeros;
+    int numPositivo = 0;
+    int numNegativo = 0;
+    int contador = 0;
+    int total = 0;
+    float media; 
+
+    printf ("Digite um numero (insira 0 para encerrar): ");
+
+    while (1) {
+        scanf ("%d", &numeros);
+
+        if (numeros == 0) {
+            break; 
+        }
+        if (numeros > 0) {
+            numPositivo ++;
+        }
+        else {
+            numNegativo ++;
+        }
+
+        total += numeros;
+        contador ++;
+    }
+    if (contador > 0) {
+        media = (float) total/contador;
+    }
+    else {
+        media = 0;
+    }
+
+    printf ("Quantidade de valores positivos: %d\n", numPositivo);
+    printf ("Quantidade de valores negativos: %d\n", numNegativo);
+    printf ("Quantidade da media dos valores digitados: %.2f\n", media);
+
+    return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">6)</span> Escrever um algoritmo que leia uma quantidade desconhecida de
+                números e conte quantos deles estão nos seguintes intervalos: [0,25], [26,50], [51,75] e [76,100]. A
+                entrada de
+                dados deve terminar quando for lido um número negativo.
+                <span class="negrito-colorido"> Dica:</span> Use while.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta6')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta6" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    int inter1 = 0;
+    int inter2 = 0;
+    int inter3 = 0;
+    int inter4 = 0;
+
+    printf("Digite um numero (negativo para encerrar): ");
+    scanf("%d", &num);
+
+    while (num >= 0) {
+        if (num >= 0 && num <= 25) {
+            inter1 ++;
+        } else if (num >= 26 && num <= 50) {
+            inter2 ++;
+        } else if (num >= 51 && num <= 75) {
+            inter3 ++;
+        } else if (num >= 76 && num <= 100) {
+            inter4 ++;
+        }
+
+        printf("Digite um numero (negativo para encerrar): ");
+        scanf("%d", &num);
+    }
+
+    printf("Intervalo [0,25]: %d\n", inter1);
+    printf("Intervalo [26,50]: %d\n", inter2);
+    printf("Intervalo [51,75]: %d\n", inter3);
+    printf("Intervalo [76,100]: %d\n", inter4);
+
+    return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">7)</span> Construa um programa que leia vários números inteiros e mostre
+                qual foi o menor valor fornecido. Para cada valor digitado, deve ser solicitado ao usuário que ele
+                digite se ele deseja continuar entrando
+                com valores.
+                <span class="negrito-colorido">Dica:</span> Use do while.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta7')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta7" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  int num;
+  int menor;
+  char continuar;
+  
+  printf("Digite um numero: ");
+  scanf("%d", &num);
+  menor = num; 
+
+  do {       
+      printf("Deseja continuar digitando? (s ou n): ");
+      scanf(" %c", &continuar); 
+
+      if (continuar == 's' || continuar == 'S') {
+          printf("Digite um numero: ");
+          scanf("%d", &num);
+          
+          if (num < menor) { 
+              menor = num; 
+          }
+      }
+  } while (continuar == 's' || continuar == 'S'); 
+ 
+  printf("O menor numero digitado foi: %d\n", menor);
+
+  return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">8)</span> Construa um programa que leia vários números inteiros e
+                positivos, calculando ao final da sequência a soma e a média desses números. A sequência termina quando
+                o usuário entrar com um valor negativo
+                <span class="negrito-colorido"> Dica:</span> Use do while.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta8')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta8" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num;
+    int soma = 0, cont = 0;
+
+    printf("Digite um numero positivo (ou um numero negativo para encerrar): ");
+    scanf("%d", &num);
+
+    do {
+        soma += num;  
+        cont++; 
+        printf("Digite um numero positivo (ou um numero negativo para encerrar): ");
+        scanf("%d", &num);  
+    } while (num >= 0);  
+
+    if (cont > 0) {
+        printf("A soma dos numeros eh: %d\n", soma);
+        printf("A media dos numeros eh: %.2f\n", (float)soma/cont);
+    } 
+
+    return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">9)</span> Chico tem 1,50 metros e cresce 2 centímetros por ano, enquanto
+                Zé tem 1,30 metros e cresce 3 centímetros por ano. Construa um algoritmo que calcule e imprima quantos
+                anos serão
+                necessários para que Zé seja maior que Chico.
+                <span class="negrito-colorido"> Dica:</span> Use for.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta9')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta9" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  float altura_chico = 1.50;  
+  float altura_ze = 1.30;    
+  int anos;
+
+  for (anos = 0; altura_ze <= altura_chico; anos++) {
+      altura_chico += 0.02;  
+      altura_ze += 0.03;         
+  }
+
+  printf("Serao necessarios %d anos para que Ze seja maior que Chico.\n", anos);
+
+  return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">10)</span> Construa um programa que calcule N! (fatorial de N), sendo
+                que o valor de N (inteiro) é fornecido pelo usuário.
+                Sabe-se que: N! = 1 x 2 x 3 x 4 x .... x N OBS: 0! = 1 (Fatorial do número zero é igual a 1 por
+                definição). Além disso, não deve ser permitido que seja calculado o fatorial de número negativo.
+                <span class="negrito-colorido"> Dica:</span> Use for.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta10')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta10" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  int N;
+  double fatorial = 1;  
+
+  printf("Digite um numero inteiro nao negativo para calcular o fatorial: ");
+  scanf("%d", &N);
+  
+  if (N < 0) {
+      printf("Nao eh possivel calcular o fatorial de um numero negativo.\n");
+  } else {
+     
+      for (int i = 1; i <= N; i++) {
+          fatorial *= i; 
+      }
+
+      if (N == 0) {
+          fatorial = 1;
+      }
+     
+      printf("O fatorial de %d eh: %.1f\n", N, fatorial);
+  }
+
+  return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">11)</span> Criar um programa que leia o um número inteiro entre 1 e 7 e
+                escreva o dia da semana correspondente.
+                Caso o usuário digite um número fora desse intervalo, deverá aparecer uma mensagem informando que não
+                existe dia da semana com esse número.
+                <span class="negrito-colorido"> Dica:</span> Use switch case.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta11')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta11" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  int dia;
+
+  printf("Digite um numero entre 1 e 7 para saber o dia da semana: ");
+  scanf("%d", &dia);
+
+  switch (dia) {
+      case 1:
+          printf("Domingo\n");
+          break;
+      case 2:
+          printf("Segunda-feira\n");
+          break;
+      case 3:
+          printf("Terça-feira\n");
+          break;
+      case 4:
+          printf("Quarta-feira\n");
+          break;
+      case 5:
+          printf("Quinta-feira\n");
+          break;
+      case 6:
+          printf("Sexta-feira\n");
+          break;
+      case 7:
+          printf("Sabado\n");
+          break;
+      default:           
+          printf("Nao existe dia da semana com esse numero.\n");
+  }
+  return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">12)</span> Escreva um programa que receba dois números reais e um código
+                de seleção do usuário.
+                Se o código digitado for 1, faça o programa adicionar os dois números previamente digitados e mostrar o
+                resultado; se o código de seleção for 2, os números devem ser multiplicados;
+                se o código de seleção for 3, o primeiro número deve ser dividido pelo segundo. Se nenhuma das opções
+                acima for escolhida, mostrar "Código inválido".
+                <span class="negrito-colorido"> Dica:</span> Use switch case.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta12')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta12" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  float num1;
+  float num2;
+  float resultado;
+  int codigo;
+
+  printf("Digite o primeiro numero real: ");
+  scanf("%f", &num1);
+
+  printf("Digite o segundo numero real: ");
+  scanf("%f", &num2);
+  
+  printf("Digite o codigo de operacao (1: Adicao, 2: Multiplicacao, 3: Divisao): ");
+  scanf("%d", &codigo);
+
+  switch (codigo) {
+      case 1:
+          resultado = num1 + num2;
+          printf("Resultado da adicao: %.2f\n", resultado);
+          break;
+      case 2:
+          resultado = num1 * num2;
+          printf("Resultado da multiplicacao: %.2f\n", resultado);
+          break;
+      case 3:
+          if (num2 != 0) {
+              resultado = num1 / num2;
+              printf("Resultado da divisao: %.2f\n", resultado);
+          } else {
+              printf("Erro! Divisao por zero nao permitida.\n");
+          }
+          break;
+      default:
+          printf("Codigo invalido.\n");
+          break;
+  }
+
+  return 0;
+}
+          </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- exercícios 13 e 14 -->
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <div class="conteudo-exercicios">
+              <h4>Vetores</h4>
+              <p><span class="negrito-colorido">13)</span> Gerar uma tabela para conversão de medidas dadas em
+                milímetros e sua respectiva medida em polegadas.
+                A tabela deve iniciar em 0 mm e terminar em 100mm, com variação de 2,5mm. Estes valores devem ser
+                armazenados em uma matriz de uma dimensão. 1 mm = 0,0393701 pol.
+                <span class="negrito-colorido"> Dica:</span> Use for.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta13')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta13" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+# include &lt;stdio.h&gt;
+      
+int main() {
+  float mm;
+  float polegadas;
+
+  printf("Tabela de conversao de mm para polegadas:\n");
+  printf("  mm       |   polegadas\n");
+  printf("---------------------------\n");
+
+    for (mm = 0; mm <= 100; mm += 2.5) {
+        polegadas = mm * 0.0393701;  
+
+        printf("  %.1f mm   |   %.6f pol\n", mm, polegadas);
+    }
+
+    return 0;
+}
+          </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">14)</span> Faça um programa que carregue um vetor com dez números
+                inteiros. Calcule e mostre os números maiores
+                que 10 e suas respectivas posições. Se não existir nenhum número nessa condição, deverá ser mostrada uma
+                mensagem informativa.
+                <span class="negrito-colorido"> Dica:</span> Use for.
+              </p>
+              <!-- botão para mostrar a resposta -->
+              <button class="toggle-btn" onclick="toggleResposta('resposta14')">Ver Resposta</button>
+
+              <!-- resposta do exercício -->
+              <div class="resposta-exercicio" id="resposta14" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button> <!-- botão de copiar -->
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+      
+int main() {
+  int vetor[10];  
+  int encontrado = 0;  
+  
+  printf("Digite 10 numeros inteiros:\n");
+
+  for (int i  = 0; i < 10; i++) {
+    printf("Numero %d: ", i + 1);
+    scanf("%d", &vetor[i]);
+  }
+
+  printf("\nNumeros maiores que 10 e suas respectivas posicoes:\n");
+  
+  for (int i = 0; i < 10; i++) {
+    if (vetor[i] > 10) {
+      printf("Numero: %d na posicao: %d\n", vetor[i], i);
+      encontrado = 1;
+      }
+  }
+  if (!encontrado) {
+        printf("Nao existem numeros maiores que 10 no vetor.\n");
+  }
+
+    return 0;
+}
+        </code></pre>
+              </div>
+            </div>
+            <div class="compilar-container2">
+              <div class="compilar-row2">
+                <h2 id="conclusao">Conclusão</h2>
+                <div class="compilar-box2" data-aos="fade-up" data-aos-delay="50">
+                  <div class="compilar-content2">
+                    <h1>O que foi aprendido no Módulo 3</h1>
+                    <ul class="modulo-topics4">
+                      <li><span class="negrito-colorido">Estruturas básicas -</span> Variáveis, operações matemáticas e
+                        entrada/saída com <strong>printf()</strong> e <strong>scanf()</strong></li>
+                      <li><span class="negrito-colorido">Condicionais -</span> Uso de <strong>if/else</strong> e
+                        <strong>switch-case</strong> para tomada de decisões</li>
+                      <li><span class="negrito-colorido">Laços de repetição -</span> Controle de fluxo com
+                        <strong>while, do-while e for</strong></li>
+                      <li><span class="negrito-colorido">Vetores (arrays) -</span> Armazenamento e manipulação de
+                        conjuntos de dados</li>
+                      <li><span class="negrito-colorido">Lógica de programação -</span> Resolução de problemas
+                        matemáticos e algoritmos</li>
+                      <li><span class="negrito-colorido">Boas práticas -</span> Organização de código e tratamento de
+                        casos especiais</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="botoes-navegacao">
+      <a href="modulo2.html" class="btn-navegacao btn-voltar">
+        Módulo Anterior
+      </a>
+      <a href="módulos.html" class="btn-navegacao btn-proximo">
+        Voltar aos Módulos
+      </a>
+    </div>
+    </section>
+  </main>
+
+  <button id="btn-topo" class="btn-topo" title="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Mostrar/ocultar botão quando rolar a página
+    window.addEventListener('scroll', function () {
+      var btnTopo = document.getElementById('btn-topo');
+      if (window.pageYOffset > 300) {
+        btnTopo.classList.add('visible');
+      } else {
+        btnTopo.classList.remove('visible');
+      }
+    });
+
+    // Rolagem suave ao clicar
+    document.getElementById('btn-topo').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+  <script>
+    function copiarCodigo(botao) {
+      const codigo = botao.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codigo).then(() => {
+        const textoOriginal = botao.innerText;
+        botao.innerText = 'Copiado!';
+        setTimeout(() => {
+          botao.innerText = textoOriginal;
+        }, 2000);
+      });
+    }
+  </script>
+
+  <!-- para o menu de navegação funcionar em dispositivos móveis -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+
+      // função para fechar todos os submenus
+      function closeAllSubmenus() {
+        document.querySelectorAll('.submenu').forEach(menu => {
+          menu.classList.remove('active');
+        });
+        document.querySelectorAll('.dropdown > a').forEach(btn => {
+          btn.classList.remove('active');
+        });
+      }
+
+      // configura o clique nos dropdowns
+      dropdownToggles.forEach(dropdown => {
+        dropdown.addEventListener('click', function (e) {
+          // verifica se é mobile
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            const isOpen = submenu.classList.contains('active');
+
+            closeAllSubmenus();
+
+            if (!isOpen) {
+              this.classList.add('active');
+              submenu.classList.add('active');
+            }
+          }
+        });
+      });
+
+      // fecha ao clicar fora do menu
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('nav')) {
+          closeAllSubmenus();
+        }
+      });
+
+      // impede que o evento propague para o documento quando clicar no menu
+      document.querySelector('nav').addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <script>
+    // Função para alternar a visibilidade da resposta
+    function toggleResposta() {
+      var resposta = document.getElementById("resposta");
+      var btn = document.querySelector(".toggle-btn");
+
+      // Alternar a exibição
+      if (resposta.style.display === "none") {
+        resposta.style.display = "block";
+        btn.textContent = "Ocultar Resposta"; // Alterando o texto do botão
+      } else {
+        resposta.style.display = "none";
+        btn.textContent = "Ver Resposta"; // Alterando o texto do botão
+      }
+    }
+  </script>
+
+  <script src="scripts.js"></script> <!-- linka o JavaScript com o HTML -->
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 - Os Programuxos - Engenharia de Computação</p>
+      <div class="social">
+        <a href="https://www.instagram.com/programuxos/">Instagram</a> |
+        <a href="https://github.com/osProgramuxos">GitHub</a> |
+        <a href="mailto:osprogramuxos@gmail.com">E-mail</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

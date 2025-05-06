@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- adapta os diferentes tipos de tela -->
+    <link rel="stylesheet" href="styles.css"> <!-- linka o css no html -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <title>Módulos - Curso C</title> <!-- título que aparece na aba do site -->
+
+    <!-- coloca o emoji de notebook no logo do site -->
+    <link rel="icon" href="https://emoji.beeimg.com/💻/64">
+    <link rel="icon" href="https://www.faviconkit.com/emoji/1f4bb/64">
+
+</head>
+
+<body>
+
+    <div id="tsparticles"></div>
+
+
+    <div id="progresso"></div> <!-- barrinha laranja que aparece conforme você rola a página -->
+
+    <header class="header"> <!-- cabeçalho do site, onde terão as opções página inicial, módulo, sobre o projeto-->
+        <section>
+            <a href="index.html">
+                <img src="./img/Os Programuxos.png" alt="logo-os-programuxos"> <!-- logo do projeto -->
+            </a>
+
+            <nav> <!-- o menu com as opções de navegação entre as diferenças abas-->
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="módulos.html">Módulos</a>
+                        <ul class="submenu">
+                            <li><a href="modulo1.html">> Módulo 1</a></li>
+                            <li><a href="modulo2.html">> Módulo 2</a></li>
+                            <li><a href="modulo3.html">> Módulo 3</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="sobre-o-projeto.html">Sobre o Projeto</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main class="caixa-modulos" style="background-image: url('./img/fundo-modulos.png'); ">
+        <div class="mascara2"></div>
+
+        <section class="modulos">
+
+            <h3 data-aos="fade-up" class="titulo-modulos">Explore os Módulos</h3>
+            <p data-aos="fade-up" class="intro">Clique nos módulos abaixo para visualizar o conteúdo detalhado.</p>
+
+            <div class="modulos-grid">
+                <div class="modulo-card" data-aos="fade-up">
+                    <h2>Módulo 1</h2>
+                    <p>Introdução à linguagem C, estrutura de um programa e primeiras impressões.</p>
+                    <a href="modulo1.html" class="btn-modulo">Ver Conteúdo</a>
+                </div>
+
+                <div class="modulo-card" data-aos="fade-up" data-aos-delay="100">
+                    <h2>Módulo 2</h2>
+                    <p>Variáveis, tipos de dados, operadores aritméticos e entrada/saída.</p>
+                    <a href="modulo2.html" class="btn-modulo">Ver Conteúdo</a>
+                </div>
+
+                <div class="modulo-card" data-aos="fade-up" data-aos-delay="200">
+                    <h2>Módulo 3</h2>
+                    <p>Condicionais (if/else), switch/case, estruturas de controle de fluxo.</p>
+                    <a href="modulo3.html" class="btn-modulo">Ver Conteúdo</a>
+                </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 - Os Programuxos - Engenharia de Computação</p>
+            <div class="social">
+                <a href="https://www.instagram.com/programuxos/">Instagram</a> |
+                <a href="https://github.com/osProgramuxos">GitHub</a> |
+                <a href="mailto:osprogramuxos@gmail.com">E-mail</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+
+    <script src="scripts.js"></script> <!-- para linkar o javascript com o html -->
+</body>
+</html>

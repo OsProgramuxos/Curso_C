@@ -1,0 +1,2867 @@
+/* reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* configuração padrão dos estilos */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* algumas das cores utilizadas no projeto */
+:root {
+  --laranja: #ff6600;
+  --preto: #000000;
+  --cinza-escuro: #111111;
+}
+
+/* header (cabeçalho) */
+.header {
+  background-color: var(--cinza-escuro);
+  padding: 1rem 2rem;
+}
+
+.header section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* logo os programuxos */
+.header img {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* links das páginas que aparecem no menu, menu de navegação */
+.header nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--laranja);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+  color: #fff;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: var(--laranja);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* caixa principal */
+.caixa-principal {
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* vídeo do fundo da página inicial */
+.caixa-video {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* caixa que possuí o vídeo */
+.caixa-video video {
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+/* mascara aplicada sobre o vídeo */
+.mascara {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+/* ajuste do vídeo da página inicial para celulares */
+@media (max-width: 600px) {
+  .caixa-video {
+    height: 100vh; /* garante altura total da viewport */
+    width: 100vw; /* garante largura total da viewport */
+  }
+  
+  .caixa-video video {
+    object-fit: cover; /* garante que o vídeo cubra toda a área sem distorcer */
+    position: absolute; /* melhor performance em mobile */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+
+/* estilos do título */
+.caixa-principal h3 {
+  color: var(--laranja);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* estilos do parágrafo */
+.caixa-principal p {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* botão link, você clica e te leva para outra página */
+.botao-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--laranja);
+  color: var(--preto);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 2rem;   /* Espaço entre o texto e o botão */
+}
+
+.botao-link:hover {
+  background-color: #ffa76e;  /* muda a cor do botão para um tom mais claro quando ele é clicado ou quando passa o mouse sobre ele*/
+  transform: scale(1.075);  /* tamanho que o botão aumenta quando passa o mouse por cima/clica */
+}
+
+/* sobre o projeto */
+.caixa-sobre {
+  background-color: var(--cinza-escuro);
+}
+
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sobre-container2 {
+  display: flex;
+  padding: 2rem 4rem;  /* 2rem em cima/baixo, 4rem nas laterais internas */
+  background-color: #181818;
+  color: #f5f5f5;
+  margin: 2rem auto;   /* centraliza e dá espaço vertical */
+  max-width: 1000px;   /* limita largura do conteúdo */
+  border-left: 4px solid none;
+  border-right: 4px solid none;
+  border-radius: 8px;
+}
+
+.sobre-texto {
+  max-width: 600px;
+  text-align: justify;
+}
+
+.sobre-texto h3 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* alinha as caixas no centro da tela, é a contêiner das caixinhas */
+.caixa-totem {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem; /* espaçamento entre as caixinhas */
+  flex-wrap: wrap;
+  background-color: var(--cinza-escuro);
+  padding: 4rem 2rem;
+}
+
+/* estilo para cada caixa do por que aprender programação*/
+.caixa {
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  padding: 20px;
+  background-color: #181818;
+  border: 2px solid #181818;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* animação */
+}
+
+.caixa:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+/* estilo do título dentro da caixa */
+.caixa h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+}
+
+.caixa-totem h2 {
+  width: 100%;  /* força o h2 a ocupar toda a linha dentro do flex */
+  text-align: center;  /* centraliza o texto */
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ff6600;
+}
+
+/* estilo do texto dentro da caixa */
+.caixa p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.477);
+}
+
+/* adapta para dispositivos móveis, com tela menor */
+@media (max-width: 768px) {
+  .header section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .caixa-principal {
+    padding: 4rem 1rem;
+  }
+
+  .caixa-principal h3 {
+    font-size: 2rem;
+  }
+
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* estilização da página módulos */
+.modulos {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #121212;
+  color: #f5f5f5;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 12px;
+  z-index: 3;
+  position: relative;
+}
+
+.modulos h1 {
+  font-size: 2.5rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+}
+
+/* linha laranja que aparece embaixo do título */
+.modulos .intro::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #ff6600;
+  margin: -0.8rem auto 1rem;
+  top: -10px;
+}
+
+/* parágrafo branco clique nos módulos...*/
+.intro {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #ccc;
+}
+
+.modulos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 1rem;
+  align-items: stretch;
+}
+
+/* adapta para dispositivos móveis */
+@media (max-width: 900px) {
+  .modulos-grid {
+    grid-template-columns: repeat(2, 1fr);    /* 2 colunas em telas médias */
+  }
+} 
+
+@media (max-width: 600px) {
+  .modulos-grid {
+    grid-template-columns: 1fr;    /* 1 coluna em telas pequenas */
+  }
+} 
+
+/* estilização das caixinhas dos módulos 1, 2, 3 */
+.modulo-card {
+  background-color: #1e1e1e;
+  border: 2px solid #2c2c2c;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex; /* Adicionado */
+  flex-direction: column; /* Adicionado */
+  height: 100%; /* Adicionado - CRUCIAL para o alinhamento */
+}
+
+.modulo-card:hover {
+  transform: translateY(-8px);
+  border-color: #ff6600;
+  box-shadow: 0 8px 20px rgba(255, 102, 0, 0.2);
+}
+
+.modulo-card h2 {
+  color: #ff6600;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.modulo-card p {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  min-height: 60px;
+  flex-grow: 1;
+}
+
+.btn-modulo {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background-color: #ff6600;
+  color: #121212;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-top: auto;
+}
+
+.btn-modulo:hover {
+  background-color: #cc5200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.caixa-modulos {
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* mascara do fundo da página módulos */
+.mascara2 {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(109deg, rgba(52, 54, 58, 0.39) 15%, rgba(75, 77, 80, 0.397) 50%, rgba(10, 12, 16, 0.99) 85%);
+  z-index: 2;
+}
+
+/* estilo títlo explore os módulos */
+.caixa-modulos h3 {
+  color: var(--laranja);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* parágrafo embaixo do explores os módulos */
+.caixa-modulos p {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* estilização da barra de progresso */
+#progresso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: var(--laranja);  /* cor do progresso */
+  width: 0%;
+  z-index: 1000;  /* fica por cima dos outros conteúdos */
+}
+
+nav {
+  position: relative;
+}
+
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul.menu>li {
+  position: relative;
+}
+
+nav ul.menu a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 0;
+  border-radius: 4px;
+  min-width: 160px;
+  background-color: #252222;
+  border: invisible;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  z-index: 10;
+}
+
+.submenu li {
+  list-style: none;
+}
+
+nav a:hover+.submenu {
+  display: block;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/* arrumando o menu de navegação dos módulos para dispositivos móveis */
+@media (max-width: 768px) {
+  nav ul.menu {
+    gap: 0;
+  }
+
+  nav ul.menu a {
+    color: var(--laranja); /* Cor padrão laranja */
+    transition: color 0.3s ease;
+  }
+
+  nav ul.menu a.active {
+    color: #fff !important; /* Branco quando ativo */
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .submenu {
+    display: none;
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    background-color: rgba(37, 34, 34, 0.9);
+    padding: 0;
+    border-top: 1px solid var(--laranja);
+  }
+
+  .submenu.active {
+    display: block;
+  }
+
+  .submenu li a {
+    padding: 12px 25px;
+    border-bottom: 1px solid #333;
+    color: var(--laranja) !important;
+  }
+
+  .dropdown > a {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  .dropdown > a::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--laranja);
+    transition: transform 0.3s;
+  }
+
+  .dropdown > a.active::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+/* página sobre o projeto */
+.sobre-projeto {
+  background-color: #121212;
+  color: #f5f5f5;
+  padding: 4rem 5rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  border-radius: 12px;
+  z-index: 3;
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+}
+
+.sobre-projeto .container {
+  max-width: 1200px;
+  margin-bottom: 3rem;
+  margin-top: 0rem;
+}
+
+.sobre-projeto h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ff6600;
+  margin-bottom: 1.5rem;
+  margin-top: -1rem;
+}
+
+.sobre-projeto .subtitulo {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* linha laranja embaixo do título sobre o projeto */
+.sobre-projeto .subtitulo::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #ff6600;
+  margin: -0.5rem auto 1rem;
+  top: -10px;
+}
+
+/* ajuste para mobile */
+@media (max-width: 768px) {
+  .sobre-projeto .subtitulo {
+      font-size: 1rem;
+      padding: 0 1rem;
+  }
+}
+
+.sobre-projeto .intro {
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sobre-bloco {
+  background-color: #1e1e1e;
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-left: 4px solid #ff6600;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  height: 300px;
+  width: 300px; /* define a largura, ajustando conforme necessário */
+  margin-left: auto; /* faz a div alinhar à direita */
+  margin-right: 0; /* garante que não haja margens à direita */
+}
+
+.sobre-bloco h2 {
+  color: #ff6600;
+  margin-bottom: 1rem;
+}
+
+.sobre-bloco p {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* botão de contato no entre em contato na página sobre o projeto */
+.btn-contato {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #ff6600;
+  color: #121212;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+/* plano de fundo da página sobre o projeto */
+.plano-fundo {
+  position: relative;
+  background-color: #181818;
+  background-image: url('./img/fundo-modulos.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* efeito parallax */
+  min-height: 100vh;
+  padding: 20px 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.mascara3 {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(109deg, rgba(52, 54, 58, 0.39) 15%, rgba(75, 77, 80, 0.397) 50%, rgba(10, 12, 16, 0.99) 85%);
+  z-index: 2;
+}
+
+/* carrossel e texto */
+.carrossel-container {
+  align-items: flex-start;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.carrossel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carrossel-item {
+  width: 100%;
+  height: auto;
+  display: none; 
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carrossel-item.active {
+  display: block;
+}
+
+.carrossel-controles {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+.carrossel-seta {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  pointer-events: auto; /* habilita cliques apenas nos botões */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-color: #ff6600;
+  margin: 0;
+}
+
+.carrossel-seta:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.2);
+}
+
+.carrossel-seta-prev {
+  color: var(--laranja);
+  left: 0;
+  margin-left: -76px; 
+}
+
+.carrossel-seta-next {
+  color: var(--laranja);
+  right: 0;
+  margin-right: -76px;
+}
+
+.carrossel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%; /* centraliza a partir do meio */
+  transform: translateX(-50%); /* ajuste para centralização perfeita */
+  right: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 0rem;
+  gap: 0.5rem;
+  z-index: 10;
+  margin: -5rem auto;
+}
+
+.carrossel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carrossel-dot.active {
+  background-color: #ff6600;
+  transform: scale(1.2);
+}
+
+.carrossel-dot:hover {
+  background-color: #ffa76e;
+}
+
+.carrossel-texto {
+  width: 35%;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #ff6600;
+}
+
+.carrossel-texto h2 {
+  color: #ff6600;
+  text-align: left;
+}
+
+.carrossel-texto p {
+  color: #ccc;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* animações para o texto */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.carrossel-item {
+  animation: fadeIn 1s forwards;
+}
+
+/* ajuste para dispositivos móveis */
+@media (max-width: 992px) {
+  /* container principal */
+  .sobre-projeto {
+    padding: 3rem 3rem;
+    margin: 2rem 1rem; /* adiciona o espaço nas laterais */
+    width: calc(100% - 2rem); /* calculo para a caixa sobre-projeto não encostar nas laterais */
+  }
+  
+  /* títulos */
+  .sobre-projeto h1 {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+  }
+  
+  .sobre-projeto .subtitulo {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  /* carrossel */
+  .carrossel-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .carrossel,
+  .carrossel-texto {
+    width: 100%;
+  }
+  
+  .carrossel-controles {
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 0 15px;
+  }
+  
+  .carrossel-seta {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    width: 35px;
+    height: 35px;
+    margin-top: 0;
+  }
+  
+  .carrossel-dots {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 1rem 0;
+  }
+  
+  .carrossel-texto {
+    padding: 1.5rem;
+  }
+}
+
+/* ajuste para tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+  /* Ajustes específicos para iPad Mini */
+  .carrossel-controles {
+    padding: 0 30px; /* Mais espaço nas laterais */
+  }
+  
+  .carrossel-seta {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .carrossel-container {
+    flex-direction: column;
+  }
+  
+  .carrossel {
+    width: 100%;
+  }
+  
+  .carrossel-controles {
+    padding: 0 15px;
+  }
+  
+  .carrossel-seta {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ajuste para celulares */
+@media (max-width: 480px) {
+  .sobre-projeto {
+    padding: 1.5rem 1rem;
+  }
+  
+  .sobre-projeto h1 {
+    font-size: 1.8rem;
+  }
+  
+  .carrossel-seta {
+    padding: 0.6rem;
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .carrossel-texto {
+    padding: 1rem;
+  }
+  
+  .botao-contato {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .carrossel-seta-prev {
+    margin-left: -70px;
+    margin-top: -20px;
+  }
+  
+  .carrossel-seta-next {
+    margin-right: -70px;
+    margin-top: -20px;
+    }
+}
+
+/* ajuste para ipadpro e tablets grandes */
+@media (max-width: 1024px) {
+  .sobre-projeto {
+    padding: 3rem 3rem;
+    margin: 2rem 1.5rem;
+    width: calc(100% - 3rem);
+  }
+  
+  .carrossel-container {
+    flex-direction: column;
+  }
+  
+  .carrossel,
+  .carrossel-texto {
+    width: 100%;
+  }
+  
+  .carrossel-controles {
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 0 20px;
+  }
+
+  .carrossel-seta {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .carrossel-seta-prev {
+    left: 10px;
+  }
+  
+  .carrossel-seta-next {
+    right: 10px;
+  }
+}
+
+/* ajuste para ipad pro em modo paisagem - ajuste especial */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) {
+  
+  .sobre-projeto {
+    padding: 3rem 4rem;
+    margin: 2rem 2rem;
+    width: calc(100% - 4rem);
+  }
+  
+  .carrossel-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .carrossel {
+    width: 55%;
+  }
+  
+  .carrossel-texto {
+    width: 40%;
+  }
+}
+
+.botao-contato {
+  display: inline-block;
+  background-color: #ff6600;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.botao-contato:hover {
+  background-color: #e65c00;
+  transform: scale(1.08);
+}
+
+/* para os botões ficarem menores em celulares, tablets */
+@media (max-width: 600px) {
+  .botoes-contato {
+      flex-direction: column;
+  }
+  
+  .botao-contato {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+  }
+}
+
+/* rodapé */
+footer {
+  background-color: var(--cinza-escuro);
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 0rem;
+}
+
+.social a {
+  display: inline-block;
+  color: #ff6600;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social a:hover {
+  transform: scale(1.05);
+  color: #ffa64d;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.social a {
+  color: #ff6600;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+/* =========== ESTILOS GERAIS (MOBILE-FIRST) =========== */
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: var(--cinza-escuro);
+  padding: 1rem;
+}
+
+.caixa-imagem {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: var(--cinza-escuro);
+  padding: 2rem 2rem;
+  margin-top: -3rem;
+}
+
+/* estilização do exemplo de código em C*/
+.imagem-section {
+  padding: 2rem 2rem;
+  text-align: center;
+}
+
+.imagem-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--laranja);
+}
+
+.imagem-section img {
+  max-width: 55%;
+  border-radius: 10px;
+  border: 3px solid var(--laranja);
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.imagem-section img:hover {
+  transform: scale(1.05);
+}
+
+/* ajuste para celulares do tamanho da imagem do exemplo */
+@media (max-width: 600px) {
+  .imagem-section {
+    padding: 3rem 1.5rem; /* reduçã odo padding para aumentar o espaço */
+  }
+  
+  .imagem-section img {
+    max-width: 90%; /* aumento da imagem do exemplo código */
+    margin: 0 auto; /* centraliza */
+    border-width: 2px; /* borda um pouco mais fina */
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3); /* sombra mais visível */
+  }
+  
+  /* ajuste do hover para celulares */
+  .imagem-section img:hover {
+    transform: scale(1.03); 
+  }
+}
+
+/* para celulares muito pequenos */
+@media (max-width: 480px) {
+  .imagem-section img {
+    max-width: 95%; /* aproveita quase toda a largura */
+    border-radius: 8px; /* bordas ligeiramente menos arredondadas */
+  }
+}
+
+.cronograma {
+  padding: 4rem 2rem;
+  background-color: #181818;
+  color: #f5f5f5;
+}
+
+.cronograma h2 {
+  color: var(--laranja);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cronograma ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cronograma li {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: #2a2a2a;
+  border-left: 5px solid var(--laranja);
+  transition: transform 0.3s ease;
+}
+
+.cronograma li:hover {
+  transform: scale(1.05);
+}
+
+.faq {
+  background-color: #121212;
+  padding: 4rem 2rem;
+}
+
+.faq h2 {
+  text-align: center;
+  color: #ff6600;
+}
+
+.faq-item {
+  max-width: 700px;
+  margin: 1rem auto;
+  background: #1e1e1e;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #ff6600;
+  transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: scale(1.05);
+}
+
+/* caixa do pronto para começar? na tela home */
+.cta-final {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #ff6600, #cc5200);
+  color: #121212;
+  margin-bottom: 0;
+}
+
+.cta-final h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #121212;
+  color: #ff6600;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #464646;
+  transform: translateY(-4px) scale(1.075);  /* sobe e aumenta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* sombra suave */
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+/* plano de fundo do módulo 1 */
+.modulos-background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* efeito parallax */
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  z-index: 1;
+}
+
+/* máscara do módulo 1*/
+.mascara-modulos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(109deg, rgba(52, 54, 58, 0.39) 15%, rgba(75, 77, 80, 0.397) 50%, rgba(10, 12, 16, 0.99) 85%);
+  z-index: 2;
+}
+
+/* todo o conteúdo que está acima da máscara */
+.conteudo-modulos {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Adaptações para dispositivos móveis */
+@media (max-width: 768px) {
+  .modulos-background {
+    background-attachment: scroll; /* Remove parallax em mobile */
+    padding: 2rem 1rem;
+  }
+  
+  .mascara-modulos {
+    background: linear-gradient(109deg, rgba(52, 54, 58, 0.39) 15%, rgba(75, 77, 80, 0.397) 50%, rgba(10, 12, 16, 0.99) 85%);
+    /* Máscara mais opaca em mobile */
+  }
+}
+
+/* caixa introdução à programação em C */
+.caixa-modulo {
+  background-color: var(--cinza-escuro);
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* container do título "módulo 1 - introdução à programação em C" com linha */
+.titulo-com-linha {
+  position: relative;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* linha laranja embaixo do título */
+.linha-laranja {
+  width: 80px;
+  height: 2px;
+  background-color: var(--laranja);
+  margin: 0.8rem auto 1.5rem;
+  display: block;
+  margin-top: -2rem;
+}
+
+.caixa-modulo:hover .linha-laranja {
+  transform: scaleX(1);
+}
+
+.modulo-texto {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.modulo-texto h3 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+
+.modulo-texto p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  margin-top: 1.5rem;
+}
+
+.modulo-topics {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.modulo-topics li {
+  display: flex;
+  align-items: flex-start; /* Alinhamento no topo para múltiplas linhas */
+  gap: 0;
+  padding: 0.4rem 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1.8rem; /* Aumentei o espaço para o dot */
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Estilo dos dots laranjas */
+.modulo-topics li::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem; /* Alinha verticalmente com o texto */
+  width: 10px;
+  height: 10px;
+  background-color: var(--laranja);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.5); /* Sombra sutil */
+}
+
+/* Efeito hover opcional */
+.modulo-topics li:hover::before {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modulo-topics {
+    grid-template-columns: 1fr;
+  }
+  
+  .modulo-topics li {
+    padding-left: 2rem;
+  }
+  
+  .modulo-topics li::before {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modulo-container2 {
+    padding: 1.2rem 1.5rem;
+  }
+  
+  .modulo-texto h3 {
+    font-size: 1.6rem;
+  }
+  
+  .modulo-texto p {
+    font-size: 1rem;
+  }
+}
+
+/* todo o conteúdo que está acima da máscara */
+.conteudo-modulos2 {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Adaptações para dispositivos móveis */
+@media (max-width: 768px) {
+  .modulos-background {
+    background-attachment: scroll; /* Remove parallax em mobile */
+    padding: 2rem 1rem;
+  }
+  
+  .mascara-modulos {
+    background: linear-gradient(109deg, rgba(52, 54, 58, 0.39) 15%, rgba(75, 77, 80, 0.397) 50%, rgba(10, 12, 16, 0.99) 85%);
+    /* Máscara mais opaca em mobile */
+  }
+}
+
+/* caixa o que é a linguagem C */
+.caixa-modulo2 {
+  background-color: var(--cinza-escuro);
+  padding: 1rem 0;
+  border-radius: 10px;
+}
+
+.modulo-texto2 {
+  max-width: 800px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.modulo-texto2 h3 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+  text-align: center;
+}
+
+.modulo-texto2 p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  margin-top: 1.5rem;
+}
+
+.modulo-topics2 li {
+  display: block;
+  align-items: flex-start; /* alinhamento no topo para várias linhas */
+  gap: 0;
+  padding: 0.4rem 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1.8rem; /* tamanho do dot */
+  line-height: 1.5;
+}
+
+/* estilo dos dots laranjas (o que é a linguagem C) */
+.modulo-topics2 li::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem; /* Alinha verticalmente com o texto */
+  width: 10px;
+  height: 10px;
+  background-color: var(--laranja);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.5); /* Sombra sutil */
+}
+
+/* efeito hover nos tópicos */
+.modulo-topics2 li:hover::before {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+.modulo-topics2 li:last-child {
+  margin-bottom: 1.5rem; /* cria um espaço entre o último tópico e o parágrafo */
+}
+
+/* caixa da imagem do logo da linguagem C */
+.caixa-imagem-modulos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--cinza-escuro);
+  padding: 2rem 1rem;
+}
+
+/* estilização do exemplo de código em C*/
+.imagem-section-modulos {
+  padding: 0rem 1rem;
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: -1rem;
+}
+
+.imagem-section-modulos h2 {
+  font-size: 1.95rem;
+  margin-bottom: 1.75rem;
+  color: var(--laranja);
+}
+
+.imagem-section-modulos img {
+  max-width: 55%;
+  border-radius: 10px;
+  border: 3px solid var(--laranja);
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.imagem-section-modulos img:hover {
+  transform: scale(1.05);
+}
+
+/* ajuste para celulares do tamanho da imagem do exemplo */
+@media (max-width: 600px) {
+  .imagem-section-modulos {
+    padding: 1.5rem 1rem; 
+  }
+  
+  .imagem-section-modulos img {
+    max-width: 90%; 
+    margin: 0 auto; 
+    border-width: 2px; 
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3); 
+  }
+  
+  .imagem-section-modulos img:hover {
+    transform: scale(1.03); 
+  }
+}
+
+@media (max-width: 480px) {
+  .imagem-section-modulos img {
+    max-width: 95%; 
+    border-radius: 8px; 
+  }
+}
+
+/* caixa por que aprender a programar? */
+.caixa-modulo3 {
+  background-color: var(--cinza-escuro);
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.caixa-totem2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background-color: var(--cinza-escuro);
+  padding: 4rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: -3rem;
+  margin-top: -5rem;
+}
+
+/* estilo para cada caixa do por que aprender C */
+.caixa-modulo-pequena {
+  flex: 1;
+  min-width: 210px;
+  max-width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  padding: 20px;
+  background-color: #181818;
+  border: 2px solid #181818;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  transform: translateY(0) scale(1) !important; 
+  transition: all 0.3s ease !important; 
+  will-change: transform; 
+}
+
+.caixa-modulo-pequena:hover {
+  transform: translateY(-9px) scale(1.030) !important;
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+  z-index: 1;
+}
+
+.caixa-modulo-pequena p {
+  text-align: center;
+}
+
+.caixas-container {
+  display: flex;
+  justify-content: space-between; 
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.caixa-totem2 h2 {
+  width: 100%;  
+  text-align: center;  
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6600;
+  margin-top: -3rem;
+}
+
+/* estilo do título dentro da caixa */
+.caixa-modulo-pequena h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+}
+
+/* estilo do texto dentro da caixa */
+.caixa-modulo-pequena p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.477);
+  margin-top: 0; 
+  padding: 0 1rem;
+}
+
+/* história e curiosidades */
+.historia {
+  padding: 0 1rem;
+}
+
+.caixa-historia h3 {
+  margin-top: -2rem;
+  text-align: center;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-ano {
+  position: absolute;
+  left: -50px;
+  top: 8px;
+  min-width: 40px;
+  height: 24px;
+  background-color: var(--laranja);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0 10px;
+  border-radius: 3px 0 0 3px; /* arredonda apenas os cantos da esquerda */
+  transition: transform 0.3s ease;
+}
+
+.timeline-ano:hover {
+  transform: scale(1.08);
+}
+
+.timeline-ano::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 12px;
+  border-color: transparent transparent transparent var(--laranja);
+  transition: transform 0.3s ease;
+}
+
+.timeline-ano::after {
+  transform: scale(1.08);
+}
+
+.conteudo-timeline {
+  background-color: #181818;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-left: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* animação */
+}
+
+.conteudo-timeline:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.conteudo-timeline h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: left;
+}
+
+/* instalando uma ide */
+.instalacao-passos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.conteudo-instalacao {
+  background-color: #181818;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-left: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.conteudo-instalacao:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.conteudo-instalacao h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: left;
+}
+
+.conteudo-instalacao h4 {
+  text-align: center;
+}
+
+.conteudo-instalacao p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.477);
+  margin-top: auto; 
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .instalacao-passos {
+    gap: 1.2rem;
+  }
+  
+  .conteudo-instalacao {
+    padding: 1.2rem;
+    margin-left: 0; 
+  }
+  
+  .conteudo-instalacao h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .conteudo-instalacao {
+    padding: 1rem;
+  }
+  
+  .conteudo-instalacao h4 {
+    font-size: 1.1rem;
+  }
+  
+  .conteudo-instalacao p {
+    font-size: 0.9rem;
+  }
+}
+
+.n-passos {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--laranja);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.botao-download {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #d65d0e;
+  color: black;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.botao-download:hover {
+  background-color: #cc5200;
+  transform: translateY(-2px);
+}
+
+.instalacao h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: center;
+}
+
+.tutorial-video {
+  margin: 3rem 0;
+  background-color: #181818;
+  padding: 2rem;
+  border-radius: 10px;
+  border-bottom: 4px solid var(--laranja);
+}
+
+.tutorial-video h3 {
+  color: var(--laranja);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-container video {
+  display: block;
+  background-color: #181818;
+}
+
+/* Opcional: tooltip */
+.yt-link::after {
+  content: "Assistir no YouTube";
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: translateY(10px);
+}
+
+.yt-link:hover::after {
+  opacity: 1;
+  transform: translateY(15px);
+}
+
+.youtube-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Ajuste opcional para melhor visualização */
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: #000; /* Fundo preto para combinar com o player */
+}
+
+/* primeiro código em C */
+.primeiro-codigo {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.primeiro-codigo h3 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* código do módulo 1 - hello world */ 
+.code-wrapper {
+  position: relative;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.copy-button {
+  position: absolute;
+  top: 8px; 
+  right: 8px;
+  background-color: #d65d0e;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px; 
+  cursor: pointer;
+  font-size: 0.7rem; 
+  z-index: 2;
+  transition: all 0.2s ease; 
+}
+
+.copy-button:hover {
+  transform: scale(1.075);
+}
+
+.code-wrapper {
+  position: relative;
+  background-color: #1e1e1e;
+  padding: 0.6rem; 
+  border-radius: 6px; 
+  max-width: 500px; 
+  margin: 1rem auto; 
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+pre, code {
+  background-color: #1e1e1e !important;
+  color: #ebdbb2;
+  font-family: 'Open Sans', monospace;
+  font-size: 1.1rem;
+  margin: 0;
+  border: none;
+  border-radius: 6px;
+  line-height: 1.4; 
+  text-align: justify;
+}
+
+/* estilização do trecho de explicação do código hello world */
+.conteudo-explicacao {
+  background-color: #181818;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: 90%;
+  max-width: 570px;
+  display: block; 
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: all 0.3s ease !important; 
+  text-align: left;
+}
+
+[data-aos].conteudo-explicacao:hover {
+  transform: scale(1.030) translateZ(0) !important;
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+  z-index: 1;
+}
+
+.conteudo-explicacao h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: left;
+  position: relative;
+}
+
+.modulo-topics3 {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.modulo-topics3 li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #ddd;
+}
+
+.modulo-topics3 li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem; 
+  width: 10px;
+  height: 10px;
+  background-color: var(--laranja);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.5); 
+}
+
+.modulo-topics3 li:hover::before {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 480px) {
+  .conteudo-explicacao {
+    padding: 1rem;
+    width: 95%;
+    margin: 1rem auto;
+  }
+  
+  .conteudo-explicacao h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .conteudo-explicacao p {
+    text-align: left;
+  }
+  
+  .modulo-topics3 li {
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .modulo-topics3 li::before {
+    left: 0.3rem;
+    top: 0.4rem;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .conteudo-explicacao:hover {
+    transform: scale(1.01); /* Efeito mais sutil em mobile */
+  }
+}
+
+/* como compilar e executar */
+.compilar-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.compilar-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.compilar-container h3 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* caixinhas como compilar e executar? */
+.compilar-box {
+  flex: 1;
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  margin: 0 auto;
+}
+
+.compilar-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.compilar-box h2 {
+  color: var(--laranja);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.compilar-box.left-box{
+  margin-bottom: 2rem;
+}
+
+.compilar-box.under-box .compilar-content {
+  flex: 1;
+  padding: 0.5rem; 
+}
+
+.compilar-box.under-box h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem; 
+}
+
+.compilar-box.under-box p {
+  font-size: 1.1rem;
+  line-height: 1.4; 
+  margin-bottom: 0.8rem; 
+  text-align: justify;
+}
+
+.compilar-box.under-box .botao-online {
+  padding: 1rem 1rem; 
+  font-size: 0.9rem; 
+  display: block;
+  margin: 1rem auto 0 auto;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .compilar-box {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .compilar-box.under-box {
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .compilar-box.under-box p {
+    font-size: 0.85rem;
+    text-align: justify;
+  }
+}
+
+/* tópicos "no dev-c++" */
+.modulo-topics4  {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.modulo-topics4 li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+
+.modulo-topics4 li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem; 
+  width: 10px;
+  height: 10px;
+  background-color: var(--laranja);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.5); 
+}
+
+.modulo-topics4 li:hover::before {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+/* código do terminal */
+.code-wrapper {
+  position: relative;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d65d0e;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #e55a00;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .compilar-container {
+    flex-direction: column; 
+    padding: 0 1rem;
+    max-width: 100%;
+    }
+
+    .compilar-section {
+      padding: 0 0.8rem; 
+    }
+  
+  .compilar-box {
+    width: calc(100% - 1.6rem); 
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .compilar-section {
+    padding: 0 0.5rem;
+  }
+  
+  .compilar-box {
+    padding: 1.2rem;
+  }
+  
+  .steps-list {
+    padding-left: 1.2rem;
+  }
+  
+  .steps-list li {
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/*  botão do compilador online */
+.botao-online {
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  background-color: #d65d0e;
+  color: black;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.botao-online:hover {
+  background-color: #cc5200;
+  transform: translateY(-2px);
+}
+
+/* container dos botões */
+.botoes-navegacao {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+/* estilo base para ambos botões */
+.btn-navegacao {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+/* botão voltar */
+.btn-voltar {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-voltar:hover {
+  background-color: #444;
+  transform: translateX(-3px);
+}
+
+/* botão próximo */
+.btn-proximo {
+  background-color: var(--laranja);
+  color: white;
+}
+
+.btn-proximo:hover {
+  background-color: #cc5200;
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .botoes-navegacao {
+      flex-direction: column;
+      gap: 1rem;
+  }
+  
+  .btn-navegacao {
+      justify-content: center;
+      width: 100%;
+  }
+}
+
+/* Botão Voltar ao Topo */
+.btn-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--laranja);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-topo.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-topo:hover {
+  background-color: #e55a00;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* módulo 2 - fundamentos da linguagem c  */
+
+.modulo-texto h2 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* estilização do trecho de explicação do código de maioridade */
+.conteudo-explicacao2 {
+  background-color: #181818;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: 100%;
+  display: block; 
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: all 0.3s ease !important; 
+  text-align: left;
+}
+
+[data-aos].conteudo-explicacao2:hover {
+  transform: scale(1.030) translateZ(0) !important;
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+  z-index: 1;
+}
+
+.conteudo-explicacao2 h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: left;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .conteudo-explicacao2 {
+    width: 95%; /* Ajusta para 95% da largura da tela em dispositivos móveis */
+  }
+}
+
+@media (max-width: 480px) {
+  .conteudo-explicacao2 {
+    width: 90%; /* Em telas menores que 480px, usa 100% da largura disponível */
+    max-width: 100%; /* Remove o limite máximo de largura */
+  }
+}
+
+[data-aos].conteudo-explicacao2:hover {
+  transform: scale(1.030) translateZ(0) !important;
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+  z-index: 1;
+}
+
+.conteudo-explicacao2 h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: left;
+}
+
+/* Estilo da div de conteúdo */
+.conteudo-explicacao {
+  background-color: #181818;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: 90%;
+  max-width: 570px;
+  display: block; 
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: all 0.3s ease !important; 
+  text-align: left;
+}
+
+.conteudo-explicacao:hover {
+  transform: scale(1.030) translateZ(0) !important;
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+  z-index: 1;
+}
+
+/* Estilo da tabela */
+.tabela-dados {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.tabela-dados th,
+.tabela-dados td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.tabela-dados th {
+  background-color: #1e1e1e;
+  color: #ff6600;
+  font-weight: 500;
+}
+
+.tabela-dados tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+.tabela-dados tr:hover {
+  background-color: #2a2a2a;
+}
+
+.destaque-laranja {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.tabela-dados td code {
+  background-color: transparent; /* Remover fundo */
+  color: #fff;
+}
+
+.tabela-dados code {
+  background-color: transparent;
+}
+
+@media (max-width: 480px) {
+  .tabela-dados {
+    font-size: 0.78rem;
+  }
+  
+  .tabela-dados th,
+  .tabela-dados td {
+    padding: 0.4rem 0.2rem;
+  }
+  
+  /* Ajuste para a coluna de exemplos */
+  .tabela-dados td:nth-child(4) {
+    max-width: 90px;
+  }
+
+  .tabela-dados tr:last-child td:nth-child(4) {
+    word-break: break-all; /* Quebra o número longe se necessário */
+    max-width: 90px; /* Largura máxima reduzida */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+    white-space: nowrap; /* Mantém em uma linha apenas */
+  }
+  
+  /* Versão alternativa para mostrar o valor completo em tooltip */
+  .tabela-dados tr:last-child td:nth-child(4) {
+    position: relative;
+  }
+  
+  .tabela-dados tr:last-child td:nth-child(4):hover::after {
+    content: attr(data-fullvalue);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #2a2a2a;
+    padding: 5px;
+    border: 1px solid #ff6600;
+    z-index: 100;
+    width: 200px;
+  }
+  .conteudo-explicacao {
+    overflow: hidden; /* Impede que conteúdo ultrapasse */
+    padding: 0.5rem;
+    box-sizing: border-box; /* Inclui padding no cálculo da largura */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* como compilar e executar */
+.compilar-section2 {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section-title2 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.compilar-container2 {
+  display: flex;
+  justify-content: center;  /* Alinha a caixinha horizontalmente */
+  align-items: center;      /* Alinha a caixinha verticalmente (se necessário) */
+  margin-top: 2rem; 
+}
+
+.compilar-container2 h2 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* caixinhas como compilar e executar? */
+.compilar-box2 {
+  flex: 1;
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  margin: 0 auto;
+}
+
+.compilar-box2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.compilar-box2 h2 {
+  color: var(--laranja);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.compilar-box2.left-box{
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .compilar-box2 {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* módulo 3 - praticando a lógica */
+.modulo-topics-modulo3 {
+  list-style: none;
+  padding: 0;
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "first second"
+    "third fourth"
+    "fifth sixth";
+  gap: 0;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  align-items: start;
+}
+
+.modulo-topics-modulo3 li {
+  display: flex;
+  align-items: flex-start;
+  gap: -1rem;
+  padding: 0.4rem 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1.8rem;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+  padding-top: 0.4rem;
+}
+
+/* estilo dos dots laranjas */
+.modulo-topics-modulo3 li::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.85rem; 
+  width: 10px;
+  height: 10px;
+  background-color: var(--laranja);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.5); 
+}
+
+.modulo-topics-modulo3 li:hover::before {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .modulo-topics-modulo3 {
+    display: flex; 
+    flex-direction: column; 
+    font-size: 1rem;
+  }
+
+  .modulo-topics-modulo3 li {
+    padding-left: 2rem; 
+    font-size: 1rem; 
+    margin-bottom: 1rem; 
+  }
+
+  .modulo-topics-modulo3 li::before {
+    width: 8px; 
+    height: 8px;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modulo-container2 {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .modulo-texto h3 {
+    font-size: 1.4rem;
+  }
+
+  .modulo-texto p {
+    font-size: 0.95rem; 
+  }
+
+  .modulo-topics-modulo3 {
+    gap: 0.8rem; 
+  }
+
+  .modulo-topics-modulo3 li {
+    padding-left: 1.6rem; 
+  }
+
+  .modulo-topics-modulo3 li::before {
+    width: 7px; 
+    height: 7px; 
+  }
+}
+
+.exercicios h3 {
+  color: var(--laranja);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.conteudo-exercicios {
+  background-color: #181818;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-left: 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* animação */
+}
+
+.conteudo-exercicios:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.conteudo-exercicios h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: left;
+}
+
+.conteudo-exercicios p {
+  text-align: justify;
+}
+
+/* botão de ocultar ou mostrar as respostas */
+.toggle-btn {
+  background-color: var(--laranja);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.toggle-btn:hover {
+  background-color: #ff6600;
+}
+
+/* estilo para a resposta do exercício */
+.resposta-exercicio {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  color: #f1f1f1;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  white-space: pre-wrap; 
+  display: none; 
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.resposta-exercicio code {
+  white-space: pre-wrap;
+}
+
+/* tópicos "no dev-c++" */
+.compilar-box2 .modulo-topics4 {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.compilar-content2 h1 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--laranja);
+  text-align: center;
+  position: relative;
+}
+
+.compilar-box2 .modulo-topics4 li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
+  text-align: left;
+}
+
+.compilar-box2 .modulo-topics4 li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 10px;
+  height: 10px;
+  background-color: var(--laranja);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 102, 0, 0.5); 
+}
+
+.compilar-box2 .modulo-topics4 li:hover::before {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
