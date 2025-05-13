@@ -1,0 +1,14 @@
+SILVEIRA, D. D. et al. Educação Matemática & Ciência da Computação na escola: aprender a programar fomenta a aprendizagem de matemática? Ciência & Educação, 2020. Disponível em: htttps://www.scielo.br/j/ciedu/a/frNxwLjSyv6SrSjGBTqSG8m/?lang=pt.
+
+BARBOSA, F. de A. C.; CHINA, A. P. Z. Aulas de Informática na Grade Curricular da Educação Infantil e Ensino Fundamental: importância e benefícios para a formação integral. Interface Tecnológica, 2022. Disponível em: https://revista.fatectq.edu.br/interfacetecnologica/article/view/146.
+
+DO BRASIL, Senado Federal. Constituição da república federativa do Brasil. Brasília: Senado 
+Federal, Centro Gráfico, 1988.
+
+Learn C Programming. Programiz. Disponível em: https://www.programiz.com/c-programming.
+Acesso em: 13 mai. 2025.
+
+What is it Linguagem C?. DioGlobal. Disponível em https://www.dio.me/en.
+Acesso em: 13 mai. 2025.
+DEITEL, Paul; DEITEL, Harvey. Como programar em C. 6. ed. São Paulo: Pearson Universidades, 2011. 846 p.
+PILLAT, Valdir Gil. Lista de Exercícios. Lógica para programação. 2023. 31 p.PDF
