@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- coloca o emoji de notebook no logo do site -->
+    <link rel="icon" href="https://emoji.beeimg.com/💻/64">
+    <link rel="icon" href="https://www.faviconkit.com/emoji/1f4bb/64">
+</head>
+
+<body>
+    <div id="progresso"></div> <!-- barra de progresso -->
+
+    <header class="header"> <!-- cabeçalho do site, onde terão as opções página inicial, módulo, sobre o projeto-->
+        <section>
+            <a href="index.html">
+                <img src="./img/Os Programuxos.png" alt="logo-os-programuxos"> <!-- logo do projeto -->
+            </a>
+
+            <nav> <!-- o menu com as opções de navegação entre as diferenças abas-->
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="módulos.html">Módulos</a>
+                        <ul class="submenu">
+                            <li><a href="modulo1.html">> Módulo 1</a></li>
+                            <li><a href="modulo2.html">> Módulo 2</a></li>
+                            <li><a href="modulo3.html">> Módulo 3</a></li>
+                            <li><a href="modulo4.html">> Módulo 4</a></li>
+                            <li><a href="modulo5.html">> Módulo 5</a></li>
+                            <li><a href="modulo6.html">> Módulo 6</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="sobre-o-projeto.html">Sobre o Projeto</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+
+    <main class="plano-fundo" style="background-image: url('./img/fundo-modulos.png'); ">
+        <div class="mascara3"></div>
+
+        <section class="sobre-projeto">
+            <div class="container">
+                <h1 data-aos="fade-up">Sobre o Projeto</h1>
+                <p class="subtitulo" data-aos="fade-up" data-aos-delay="200">Conheça o nosso projeto de extensão e
+                    programação</p>
+
+                <div class="carrossel-container" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Carrossel de Imagens -->
+                    <div class="carrossel" id="carrossel">
+                        <img src="img/objetivo-sobre-projeto.png" alt="Imagem 1" class="carrossel-item" />
+                        <img src="img/metodologia-sobre-projeto.png" alt="Imagem 2" class="carrossel-item" />
+                        <img src="img/grupo-sobre-projeto.png" alt="Imagem 3" class="carrossel-item" />
+                        <img src="img/ferramentas-sobre-projeto.png" alt="Imagem 4" class="carrossel-item" />
+                        <img src="img/facul-sobre-projeto.png" alt="Imagem 5" class="carrossel-item" />
+                        <img src="img/logo-sobre-projeto.png" alt="Imagem 6" class="carrossel-item" />
+                    </div>
+
+                    <!-- Caixa de Texto -->
+                    <div class="carrossel-texto" id="texto">
+                        <h2 id="titulo">🎯 Objetivo</h2>
+                        <p id="descricao">Oferecer um curso introdutório, gratuito e acessível de programação em
+                            linguagem
+                            C.</p>
+                    </div>
+
+                    <div class="carrossel-controles">
+                        <button class="carrossel-seta carrossel-seta-prev" onclick="mudarSlide(-1)">&#10094;</button>
+                        <button class="carrossel-seta carrossel-seta-next" onclick="mudarSlide(1)">&#10095;</button>
+                    </div>
+
+                    <div class="carrossel-dots" id="carrossel-dots">
+                        <!-- Os dots serão gerados pelo JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 - Os Programuxos - Engenharia de Computação</p>
+            <div class="social">
+                <a href="https://www.instagram.com/programuxos/">Instagram</a> |
+                <a href="https://github.com/osProgramuxos">GitHub</a> |
+                <a href="mailto:osprogramuxos@gmail.com">E-mail</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- para o menu de navegação funcionar em dispositivos móveis -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.dropdown > a');
+
+            // função para fechar todos os submenus
+            function closeAllSubmenus() {
+                document.querySelectorAll('.submenu').forEach(menu => {
+                    menu.classList.remove('active');
+                });
+                document.querySelectorAll('.dropdown > a').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            }
+
+            // configura o clique nos dropdowns
+            dropdownToggles.forEach(dropdown => {
+                dropdown.addEventListener('click', function (e) {
+                    // verifica se é mobile
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const submenu = this.nextElementSibling;
+                        const isOpen = submenu.classList.contains('active');
+
+                        closeAllSubmenus();
+
+                        if (!isOpen) {
+                            this.classList.add('active');
+                            submenu.classList.add('active');
+                        }
+                    }
+                });
+            });
+
+            // fecha ao clicar fora do menu
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('nav')) {
+                    closeAllSubmenus();
+                }
+            });
+
+            // impede que o evento propague para o documento quando clicar no menu
+            document.querySelector('nav').addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

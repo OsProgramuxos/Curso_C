@@ -1,0 +1,251 @@
+<!DOCTYPE html> <!-- define o doc como HTML5 -->
+<html lang="pt-BR"> <!-- define o idioma como português - Brasil -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- adapta os diferentes tipos de tela -->
+    <link rel="stylesheet" href="styles.css"> <!-- linka o css no html -->
+    <!-- código da fonte usada, open sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet"> <!-- importa as fontes que usa no site -->
+
+    <title>Curso de Programação em C</title> <!-- título que aparece na aba do site -->
+
+    <!-- coloca o emoji de notebook no logo do site -->
+    <link rel="icon" href="https://emoji.beeimg.com/💻/64">
+    <link rel="icon" href="https://www.faviconkit.com/emoji/1f4bb/64">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div id="progresso"></div> <!-- barrinha laranja que aparece conforme você rola a página -->
+
+    <!-- aqui é o início do corpo do site, onde aparece os conteúdos do site -->
+    <div class="caixa-video">
+        <video src="./videos/pag-inicial.mp4" loop muted autoplay></video>
+        <div class="mascara"></div>
+    </div>
+
+    <header class="header"> <!-- cabeçalho do site, onde terão as opções página inicial, módulo, sobre o projeto-->
+        <section>
+            <a href="index.html">
+                <img src="./img/Os Programuxos.png" alt="logo-os-programuxos"> <!-- logo do projeto -->
+            </a>
+
+            <nav> <!-- o menu com as opções de navegação entre as diferenças abas-->
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="módulos.html">Módulos</a>
+                        <ul class="submenu">
+                            <li><a href="modulo1.html">> Módulo 1</a></li>
+                            <li><a href="modulo2.html">> Módulo 2</a></li>
+                            <li><a href="modulo3.html">> Módulo 3</a></li>
+                            <li><a href="modulo4.html">> Módulo 4</a></li>
+                            <li><a href="modulo5.html">> Módulo 5</a></li>
+                            <li><a href="modulo6.html">> Módulo 6</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="sobre-o-projeto.html">Sobre o Projeto</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <section class="caixa-principal">
+        <!-- seção principal -->
+        <div>
+            <h3>Aprenda Programação em C do Zero</h3>
+            <p>Curso gratuito, direto ao ponto, feito para quem quer começar com o pé direito.
+            </p>
+            <!-- texto de boas-vindas -->
+            <a href="módulos.html" class="botao-link">Começar os módulos</a>
+            <!-- botão com link que leva para os módulos -->
+        </div>
+    </section>
+
+    <section class="caixa-sobre">
+        <!-- seção "sobre" com imagem e texto -->
+        <div class="sobre-container">
+            <div class="sobre-container2">
+                <div class="sobre-texto">
+                    <h3>Objetivo do minicurso</h3>
+                    <p>Domine os fundamentos da linguagem C com um minicurso prático e direto. Projetado para
+                        iniciantes, ensinamos desde a sintaxe básica até a lógica de programação, preparando você para
+                        criar algoritmos eficientes e entender como os computadores funcionam.</p>
+                    <a class="botao-link" href="sobre-o-projeto.html" title="Sobre o Projeto">Sobre o Projeto</a>
+                    <!-- link para página de sobre o projeto -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="caixa-totem">
+        <h2>Por que aprender a programar?</h2>
+        <div class="caixa" data-aos="fade-up" data-aos-delay="200">
+            <h4>💡 Autonomia Digital</h4>
+            <p>Programar te transforma de usuário em criador. Você deixa de apenas consumir tecnologia para desenvolver
+                suas próprias soluções e automatizar tarefas do cotidiano.</p>
+        </div>
+        <div class="caixa" data-aos="fade-up" data-aos-delay="400">
+            <h4>🌐 Linguagem Universal</h4>
+            <p>A lógica de programação é um novo idioma global. Dominá-la amplia suas oportunidades em qualquer área,
+                desde finanças até medicina, em qualquer lugar do mundo.</p>
+        </div>
+        <div class="caixa" data-aos="fade-up" data-aos-delay="600">
+            <h4>🚀 Futuro Profissional</h4>
+            <p>Até 2030, 60% das profissões exigirão noções de código. Aprender programação hoje é garantir vantagem
+                competitiva em carreiras bem remuneradas.</p>
+        </div>
+    </section>
+
+    <!-- trecho do código de exemplo -->
+    <section class="caixa-imagem">
+        <section class="imagem-section">
+            <h2>Veja um Exemplo de Código em C</h2>
+            <img src="img/codigo-c.png" alt="Exemplo de código em C">
+        </section>
+    </section>
+
+    <!-- Cronograma -->
+    <section class="cronograma">
+        <h2>Cronograma do Curso</h2>
+        <ul>
+            <li><span><strong>Módulo 1:</span></strong> Introdução e Ambiente</li>
+            <li><span><strong>Módulo 2:</span></strong> Variáveis e Tipos</li>
+            <li><span><strong>Módulo 3:</span></strong> Condicionais e Laços</li>
+        </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-item">
+            <h3>Preciso ter experiência com programação?</h3>
+            <p>Não! Começamos totalmente do zero.</p>
+        </div>
+        <div class="faq-item">
+            <h3>O curso é mesmo gratuito?</h3>
+            <p>Sim, esse projeto é parte de uma iniciativa de extensão universitária.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Preciso instalar algo?</h3>
+            <p>Sim. Vamos ensinar como instalar um compilador e um editor.</p>
+        </div>
+    </section>
+
+    <!-- chamada final -->
+    <section class="caixa-final">
+        <section class="cta-final">
+            <h2>Pronto para começar?</h2>
+            <a href="módulos.html" class="btn btn-large">Acessar os Módulos</a>
+        </section>
+    </section>
+
+    <!-- rodapé -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 - Os Programuxos - Engenharia de Computação</p>
+            <div class="social">
+                <a href="https://www.instagram.com/programuxos/">Instagram</a> |
+                <a href="https://github.com/osProgramuxos">GitHub</a> |
+                <a href="mailto:osprogramuxos@gmail.com">E-mail</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="btn-topo" class="btn-topo" title="Voltar ao topo">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Mostrar/ocultar botão quando rolar a página
+        window.addEventListener('scroll', function() {
+            var btnTopo = document.getElementById('btn-topo');
+            if (window.pageYOffset > 300) {
+                btnTopo.classList.add('visible');
+            } else {
+                btnTopo.classList.remove('visible');
+            }
+        });
+        
+        // Rolagem suave ao clicar
+        document.getElementById('btn-topo').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        </script>
+
+    <script src="scripts.js"></script> <!-- para linkar o javascript com o html -->
+
+    <!-- para o menu de navegação funcionar em dispositivos móveis -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggles = document.querySelectorAll('.dropdown > a');
+      
+      // função para fechar todos os submenus
+      function closeAllSubmenus() {
+        document.querySelectorAll('.submenu').forEach(menu => {
+          menu.classList.remove('active');
+        });
+        document.querySelectorAll('.dropdown > a').forEach(btn => {
+          btn.classList.remove('active');
+        });
+      }
+    
+      // configura o clique nos dropdowns
+      dropdownToggles.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+          // verifica se é mobile
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            const isOpen = submenu.classList.contains('active');
+            
+            closeAllSubmenus();
+            
+            if (!isOpen) {
+              this.classList.add('active');
+              submenu.classList.add('active');
+            }
+          }
+        });
+      });
+    
+      // fecha ao clicar fora do menu
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('nav')) {
+          closeAllSubmenus();
+        }
+      });
+    
+      // impede que o evento propague para o documento quando clicar no menu
+      document.querySelector('nav').addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+    </script>
+
+    
+    <!-- AOS script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500,
+            once: true
+        });
+    </script>
+</body>
+</body>
+
+</html>

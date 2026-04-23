@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>hljs.highlightAll();</script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="icon" href="https://emoji.beeimg.com/💻/64">
+  <link rel="icon" href="https://www.faviconkit.com/emoji/1f4bb/64">
+
+  <title>Módulo 4</title>
+</head>
+
+<body>
+  <div id="progresso"></div>
+
+  <header class="header">
+    <section>
+      <a href="index.html">
+        <img src="./img/Os Programuxos.png" alt="logo-os-programuxos">
+      </a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="módulos.html">Módulos</a>
+            <ul class="submenu">
+              <li><a href="modulo1.html">> Módulo 1</a></li>
+              <li><a href="modulo2.html">> Módulo 2</a></li>
+              <li><a href="modulo3.html">> Módulo 3</a></li>
+              <li><a href="modulo4.html">> Módulo 4</a></li>
+              <li><a href="modulo5.html">> Módulo 5</a></li>
+              <li><a href="modulo6.html">> Módulo 6</a></li>
+            </ul>
+          </li>
+          <li><a href="sobre-o-projeto.html">Sobre o Projeto</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <main class="modulos-background" style="background-image: url('./img/fundo-modulos.png');">
+    <div class="mascara-modulos"></div>
+
+    <section class="conteudo-modulos">
+      <div class="caixa-modulo" data-aos="fade-up">
+        <div class="modulo-texto" data-aos="fade-up">
+          <div class="titulo-com-linha">
+            <h3>Módulo 4 - Funções</h3>
+            <div class="linha-laranja"></div>
+          </div>
+          <p>
+            Bem-vindo ao <strong>Módulo 4.</strong> Neste módulo você vai aprender a criar funções em C para dividir o
+            programa em partes menores, reutilizar código e deixar a lógica mais organizada.
+          </p>
+          <ul class="modulo-topics-modulo3">
+            <li>O que são funções</li>
+            <li>Criação e chamada de funções</li>
+            <li>Parâmetros</li>
+            <li>Retorno de valores</li>
+            <li>Funções sem retorno</li>
+            <li>Escopo de variáveis</li>
+          </ul>
+        </div>
+
+        <style>
+          .negrito-colorido {
+            font-weight: bold;
+            color: #ff6600;
+          }
+        </style>
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <h3>O que é uma função?</h3>
+            <div class="modulo-texto">
+              <p>
+                Uma função é um bloco de código criado para executar uma tarefa específica. Em C, todo programa começa
+                pela função <span class="negrito-colorido">main</span>, mas você também pode criar suas próprias funções.
+              </p>
+            </div>
+            <div class="conteudo-exercicios">
+              <h4>Exemplo: função simples</h4>
+              <button class="toggle-btn" onclick="toggleResposta('resposta1')">Ver Código</button>
+              <div class="resposta-exercicio" id="resposta1" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+void mostrarMensagem() {
+  printf("Bem-vindo ao estudo de funcoes em C!\n");
+}
+
+int main() {
+  mostrarMensagem();
+
+  return 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <h3>Funções com parâmetros</h3>
+            <div class="modulo-texto">
+              <p>
+                Parâmetros são valores enviados para uma função. Eles permitem que a função trabalhe com dados diferentes
+                a cada chamada.
+              </p>
+            </div>
+            <div class="conteudo-exercicios">
+              <h4>Exemplo: função para somar dois números</h4>
+              <button class="toggle-btn" onclick="toggleResposta('resposta2')">Ver Código</button>
+              <div class="resposta-exercicio" id="resposta2" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int somar(int a, int b) {
+  return a + b;
+}
+
+int main() {
+  int resultado;
+
+  resultado = somar(10, 5);
+
+  printf("Resultado da soma: %d", resultado);
+
+  return 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <h3>Exercícios</h3>
+            <div class="conteudo-exercicios">
+              <p><span class="negrito-colorido">1)</span> Crie uma função que receba dois números e retorne o maior.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta3')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta3" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int maiorNumero(int a, int b) {
+  if (a &gt; b) {
+    return a;
+  }
+
+  return b;
+}
+
+int main() {
+  int x;
+  int y;
+
+  printf("Digite o primeiro numero: ");
+  scanf("%d", &amp;x);
+
+  printf("Digite o segundo numero: ");
+  scanf("%d", &amp;y);
+
+  printf("Maior numero: %d", maiorNumero(x, y));
+
+  return 0;
+}
+                </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">2)</span> Crie uma função que receba uma nota e diga se o aluno foi aprovado.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta4')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta4" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+void verificarAprovacao(float nota) {
+  if (nota &gt;= 6) {
+    printf("Aluno aprovado");
+  } else {
+    printf("Aluno reprovado");
+  }
+}
+
+int main() {
+  float nota;
+
+  printf("Digite a nota: ");
+  scanf("%f", &amp;nota);
+
+  verificarAprovacao(nota);
+
+  return 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="botoes-navegacao">
+          <a href="modulo3.html" class="btn-navegacao btn-voltar">Módulo Anterior</a>
+          <a href="modulo5.html" class="btn-navegacao btn-proximo">Próximo Módulo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="btn-topo" class="btn-topo" title="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      var btnTopo = document.getElementById('btn-topo');
+      if (window.pageYOffset > 300) {
+        btnTopo.classList.add('visible');
+      } else {
+        btnTopo.classList.remove('visible');
+      }
+    });
+
+    document.getElementById('btn-topo').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+
+  <script>
+    function copiarCodigo(botao) {
+      const codigo = botao.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codigo).then(() => {
+        const textoOriginal = botao.innerText;
+        botao.innerText = 'Copiado!';
+        setTimeout(() => {
+          botao.innerText = textoOriginal;
+        }, 2000);
+      });
+    }
+  </script>
+
+  <script src="scripts.js"></script>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 - Os Programuxos - Engenharia de Computação</p>
+      <div class="social">
+        <a href="https://www.instagram.com/programuxos/">Instagram</a> |
+        <a href="https://github.com/osProgramuxos">GitHub</a> |
+        <a href="mailto:osprogramuxos@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

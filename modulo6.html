@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>hljs.highlightAll();</script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="icon" href="https://emoji.beeimg.com/💻/64">
+  <link rel="icon" href="https://www.faviconkit.com/emoji/1f4bb/64">
+
+  <title>Módulo 6</title>
+</head>
+
+<body>
+  <div id="progresso"></div>
+
+  <header class="header">
+    <section>
+      <a href="index.html">
+        <img src="./img/Os Programuxos.png" alt="logo-os-programuxos">
+      </a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="módulos.html">Módulos</a>
+            <ul class="submenu">
+              <li><a href="modulo1.html">> Módulo 1</a></li>
+              <li><a href="modulo2.html">> Módulo 2</a></li>
+              <li><a href="modulo3.html">> Módulo 3</a></li>
+              <li><a href="modulo4.html">> Módulo 4</a></li>
+              <li><a href="modulo5.html">> Módulo 5</a></li>
+              <li><a href="modulo6.html">> Módulo 6</a></li>
+            </ul>
+          </li>
+          <li><a href="sobre-o-projeto.html">Sobre o Projeto</a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <main class="modulos-background" style="background-image: url('./img/fundo-modulos.png');">
+    <div class="mascara-modulos"></div>
+
+    <section class="conteudo-modulos">
+      <div class="caixa-modulo" data-aos="fade-up">
+        <div class="modulo-texto" data-aos="fade-up">
+          <div class="titulo-com-linha">
+            <h3>Módulo 6 - Exercícios Práticos</h3>
+            <div class="linha-laranja"></div>
+          </div>
+          <p>
+            Bem-vindo ao <strong>Módulo 6.</strong> Este módulo reúne exercícios para revisar entrada e saída de dados,
+            condicionais, laços de repetição, vetores, funções e ponteiros.
+          </p>
+          <ul class="modulo-topics-modulo3">
+            <li>Exercícios de revisão</li>
+            <li>Entrada e saída de dados</li>
+            <li>Condicionais e laços</li>
+            <li>Vetores</li>
+            <li>Funções</li>
+            <li>Ponteiros</li>
+          </ul>
+        </div>
+
+        <style>
+          .negrito-colorido {
+            font-weight: bold;
+            color: #ff6600;
+          }
+        </style>
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <h3>Lista de Exercícios</h3>
+            <div class="modulo-texto">
+              <p>
+                Resolva primeiro sem olhar a resposta. Depois use o botão de cada exercício para comparar sua solução
+                com uma possibilidade de código.
+              </p>
+            </div>
+
+            <div class="conteudo-exercicios">
+              <h4>Revisão básica</h4>
+              <p><span class="negrito-colorido">1)</span> Leia dois números inteiros e mostre a soma, subtração, multiplicação e divisão.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta1')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta1" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  int a;
+  int b;
+
+  printf("Digite o primeiro numero: ");
+  scanf("%d", &amp;a);
+
+  printf("Digite o segundo numero: ");
+  scanf("%d", &amp;b);
+
+  printf("Soma: %d\n", a + b);
+  printf("Subtracao: %d\n", a - b);
+  printf("Multiplicacao: %d\n", a * b);
+
+  if (b != 0) {
+    printf("Divisao: %.2f\n", (float)a / b);
+  } else {
+    printf("Nao existe divisao por zero.\n");
+  }
+
+  return 0;
+}
+                </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">2)</span> Leia uma idade e informe se a pessoa é maior de idade.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta2')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta2" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  int idade;
+
+  printf("Digite a idade: ");
+  scanf("%d", &amp;idade);
+
+  if (idade &gt;= 18) {
+    printf("Maior de idade");
+  } else {
+    printf("Menor de idade");
+  }
+
+  return 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <div class="conteudo-exercicios">
+              <h4>Laços e vetores</h4>
+              <p><span class="negrito-colorido">3)</span> Mostre a tabuada de um número informado pelo usuário.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta3')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta3" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  int numero;
+  int i;
+
+  printf("Digite um numero: ");
+  scanf("%d", &amp;numero);
+
+  for (i = 1; i &lt;= 10; i++) {
+    printf("%d x %d = %d\n", numero, i, numero * i);
+  }
+
+  return 0;
+}
+                </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">4)</span> Leia 5 notas em um vetor e calcule a média.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta4')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta4" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+  float notas[5];
+  float soma = 0;
+  int i;
+
+  for (i = 0; i &lt; 5; i++) {
+    printf("Digite a nota %d: ", i + 1);
+    scanf("%f", &amp;notas[i]);
+    soma = soma + notas[i];
+  }
+
+  printf("Media: %.2f", soma / 5);
+
+  return 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="compilar-section">
+          <div class="exercicios" data-aos="fade-up">
+            <div class="conteudo-exercicios">
+              <h4>Funções e ponteiros</h4>
+              <p><span class="negrito-colorido">5)</span> Crie uma função que receba um número e retorne o dobro.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta5')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta5" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int dobrar(int numero) {
+  return numero * 2;
+}
+
+int main() {
+  int valor;
+
+  printf("Digite um numero: ");
+  scanf("%d", &amp;valor);
+
+  printf("Dobro: %d", dobrar(valor));
+
+  return 0;
+}
+                </code></pre>
+              </div>
+
+              <p><span class="negrito-colorido">6)</span> Use ponteiro para alterar o valor de uma variável dentro de uma função.</p>
+              <button class="toggle-btn" onclick="toggleResposta('resposta6')">Ver Resposta</button>
+              <div class="resposta-exercicio" id="resposta6" style="display: none;">
+                <button class="copy-button" onclick="copiarCodigo(this)">Copiar</button>
+                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+void alterarValor(int *numero) {
+  *numero = 100;
+}
+
+int main() {
+  int valor = 10;
+
+  printf("Antes: %d\n", valor);
+
+  alterarValor(&amp;valor);
+
+  printf("Depois: %d\n", valor);
+
+  return 0;
+}
+                </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="botoes-navegacao">
+          <a href="modulo5.html" class="btn-navegacao btn-voltar">Módulo Anterior</a>
+          <a href="módulos.html" class="btn-navegacao btn-proximo">Voltar aos Módulos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="btn-topo" class="btn-topo" title="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      var btnTopo = document.getElementById('btn-topo');
+      if (window.pageYOffset > 300) {
+        btnTopo.classList.add('visible');
+      } else {
+        btnTopo.classList.remove('visible');
+      }
+    });
+
+    document.getElementById('btn-topo').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+
+  <script>
+    function copiarCodigo(botao) {
+      const codigo = botao.nextElementSibling.innerText;
+      navigator.clipboard.writeText(codigo).then(() => {
+        const textoOriginal = botao.innerText;
+        botao.innerText = 'Copiado!';
+        setTimeout(() => {
+          botao.innerText = textoOriginal;
+        }, 2000);
+      });
+    }
+  </script>
+
+  <script src="scripts.js"></script>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 - Os Programuxos - Engenharia de Computação</p>
+      <div class="social">
+        <a href="https://www.instagram.com/programuxos/">Instagram</a> |
+        <a href="https://github.com/osProgramuxos">GitHub</a> |
+        <a href="mailto:osprogramuxos@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
